@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover the Moroccan Sahara</title>
+    <link rel="stylesheet" href="../static/styles/sahara.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<style>
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease;
+        }
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+        }
+        .hero {
+            position: relative;
+            height: 100vh;
+            background-image: url('images/sahara/sahara.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+</style>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+        <div class="logo">
+            <span class="logo-leaf">🍃</span>EcoMorocco
+        </div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../pages/destinations.html">Destinations</a></li>
+            <li><a href="../pages/blogs.html">Blog</a></li>
+            <li><a href="../pages/about.html">About Us</a></li>
+            <li><a href="../pages/contact.html">Contact</a></li>
+    
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Discover the Magical Moroccan Sahara</h1>
+            <p>Experience the golden dunes, starlit skies, and rich Berber culture of Morocco's magnificent desert</p>
+            <a href="#itinerary" class="btn">Plan Your Journey</a>
+        </div>
+    </section>
+
+    <!-- About Moroccan Sahara Section -->
+    <section id="about" class="featured-section">
+        <div class="container">
+            <h2 class="section-title">About the Moroccan Sahara</h2>
+            <p class="section-intro">The Moroccan Sahara represents the western edge of the great Sahara Desert, featuring some of the most accessible and spectacular desert landscapes in North Africa. From towering dunes to rocky plateaus, Morocco offers a diverse desert experience.</p>
+            
+            <div class="culture-content">
+                <img src="images/sahara/sahhra.jpg" alt="Erg Chebbi sand dunes near Merzouga, Morocco" class="culture-img">
+                <div class="culture-info">
+                    <div class="culture-details">
+                        <h3>The Moroccan Desert Experience</h3>
+                        <p>The Moroccan Sahara is characterized by two main erg (sand sea) regions: Erg Chebbi near Merzouga and Erg Chigaga near M'hamid. These vast dune systems, some reaching heights of 150 meters, create the quintessential Sahara experience that has captivated travelers for generations.</p>
+                        <p>Beyond the famous dunes, the Moroccan Sahara includes diverse landscapes from stone deserts (hamada) to mountain oases, ancient kasbahs, and palm-filled valleys that have supported life for centuries.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-section">
+                <h3 class="subsection-title">History of the Moroccan Sahara</h3>
+                <div class="history-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Ancient Times</h4>
+                            <p>The Moroccan Sahara was once a fertile savanna populated by diverse wildlife and human settlements, as evidenced by rock art in regions like Draa Valley dating back 5,000+ years.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Trans-Saharan Trade</h4>
+                            <p>From the 8th century onward, Morocco became a crucial gateway for trans-Saharan trade routes connecting sub-Saharan Africa with Mediterranean markets. Gold, salt, and slaves traveled north while textiles and manufactured goods moved south.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Colonial Period</h4>
+                            <p>The French and Spanish established protectorates in Morocco in the early 20th century, with Spain controlling much of the Saharan regions until Morocco gained independence in 1956.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h4>Modern Era</h4>
+                            <p>Today, while the Western Sahara remains a disputed territory, the Moroccan Sahara has developed into a premier destination for adventure tourism, cultural experiences, and astronomical observation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section id="culture" class="eco-tips">
+        <div class="container">
+            <h2 class="section-title">Moroccan Sahara Culture</h2>
+            <p class="section-intro">The culture of the Moroccan Sahara is a rich tapestry woven from Berber, Arab, and Sahrawi influences, creating unique traditions that have adapted to desert life over centuries.</p>
+            
+            <div class="card-container">
+                <div class="card" data-aos="fade-up">
+                    <img src="images/sahara/medfina.jpg" alt="Traditional Moroccan desert cuisine" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Desert Cuisine</h3>
+                        <p class="card-text">Moroccan Saharan food is hearty and flavorful, designed to provide sustenance in the harsh desert environment. Key dishes include:</p>
+                        <ul class="feature-list">
+                            <li>Tagine - slow-cooked stews named after the conical earthenware pots they're prepared in</li>
+                            <li>Couscous - steamed semolina typically served with vegetables and meat on Fridays</li>
+                            <li>Medfouna (Berber Pizza) - a stuffed bread specialty of the desert regions</li>
+                            <li>Dates - harvested from the numerous oasis palm groves</li>
+                            <li>Mint Tea - the ceremonial drink of hospitality throughout Morocco</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/sahara/clothes.jpg" alt="Traditional Berber clothing from Moroccan Sahara" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Traditional Clothing</h3>
+                        <p class="card-text">Desert clothing in Morocco is both practical and beautiful, designed to protect from sun, sand, and temperature extremes:</p>
+                        <ul class="feature-list">
+                            <li>Djellaba - a loose-fitting hooded robe worn by both men and women</li>
+                            <li>Gandora - a lighter robe often worn in warmer weather</li>
+                            <li>Tagelmust - the distinctive indigo head covering worn by Tuareg men</li>
+                            <li>Caftan - elaborate robes worn for special occasions</li>
+                            <li>Colorful headscarves and veils adorned with coins and embroidery</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/sahara/music.jpg" alt="Gnawa musicians performing in the Moroccan desert" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Music & Arts</h3>
+                        <p class="card-text">The Moroccan Sahara has a rich musical tradition that reflects its cultural diversity:</p>
+                        <ul class="feature-list">
+                            <li>Gnawa - spiritual trance music with roots in sub-Saharan Africa</li>
+                            <li>Andalusian music - classical tradition with Spanish-Moorish origins</li>
+                            <li>Berber folk music featuring the bendir drum and three-stringed sintir</li>
+                            <li>Carpet weaving with distinctive geometric patterns</li>
+                            <li>Metalwork and jewelry making, especially silver with coral and amber</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-container" style="margin-top: 2rem;">
+                <div class="card" data-aos="fade-up">
+                    <img src="images/sahara/lang.jpg" alt="Berber script and Arabic calligraphy" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Languages</h3>
+                        <p class="card-text">The linguistic landscape of the Moroccan Sahara reflects its diverse cultural heritage:</p>
+                        <ul class="feature-list">
+                            <li>Arabic - the official language of Morocco</li>
+                            <li>Amazigh (Berber) - particularly the Tamazight and Tashelhit dialects</li>
+                            <li>Hassaniya - an Arabic dialect spoken in the southern regions</li>
+                            <li>French - widely understood in tourist areas</li>
+                            <li>Spanish - sometimes spoken in northern areas and former Spanish territories</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/sahara/festivals.jpg" alt="Desert festival celebration in Morocco" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Festivals & Celebrations</h3>
+                        <p class="card-text">The Moroccan Sahara hosts several unique cultural festivals throughout the year:</p>
+                        <ul class="feature-list">
+                            <li>Moussem of Tan-Tan - UNESCO-recognized nomadic cultural gathering</li>
+                            <li>International Nomads Festival in M'hamid El Ghizlane</li>
+                            <li>Date Festival in Erfoud celebrating the annual harvest</li>
+                            <li>Sahara International Film Festival in the Western Sahara</li>
+                            <li>Religious celebrations including Eid al-Fitr and Eid al-Adha</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Famous Cities Section -->
+    <section id="cities" class="featured-section">
+        <div class="container">
+            <h2 class="section-title">Cities & Settlements of the Moroccan Sahara</h2>
+            <p class="section-intro">From ancient caravan stops to modern desert outposts, the cities and towns of the Moroccan Sahara each offer unique experiences and gateways to desert adventure.</p>
+            
+            <div class="card-container">
+                <div class="card" data-aos="fade-up">
+                    <img src="images/merzouga.jpg" alt="Merzouga with Erg Chebbi dunes in background" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Merzouga</h3>
+                        <p class="card-text">This small village sits at the edge of the spectacular Erg Chebbi dunes, some of Morocco's highest. It serves as the main base for camel treks and desert camps in the region, and is famous for its stunning sunrise and sunset views over the golden dunes.</p>
+                        <a href="#" class="card-link">Explore Merzouga <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/ouarzazate.jpg" alt="Kasbah in Ouarzazate, Morocco" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Ouarzazate</h3>
+                        <p class="card-text">Known as the "Gateway to the Desert" and "Hollywood of Morocco," Ouarzazate is home to Atlas Film Studios where numerous Hollywood blockbusters were filmed. The impressive Taourirt Kasbah and nearby Aït Benhaddou are UNESCO World Heritage sites.</p>
+                        <a href="#" class="card-link">Explore Ouarzazate <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/zagora.jpg" alt="Palm trees in Zagora, Morocco" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Zagora</h3>
+                        <p class="card-text">This desert town in the Draa Valley is famous for its sign stating "Timbuktu 52 days" (by camel). Surrounded by palm groves and mountains, Zagora was historically an important stop on trans-Saharan trade routes and today serves as a base for desert excursions.</p>
+                        <a href="#" class="card-link">Explore Zagora <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-container" style="margin-top: 2rem;">
+                <div class="card" data-aos="fade-up">
+                    <img src="images/erfoud.jpg" alt="Date palms in Erfoud, Morocco" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Erfoud</h3>
+                        <p class="card-text">Known as the "Gate of the Sahara Desert," Erfoud is famous for its date festival and fossil marble. The surrounding area is rich in fossils from when the region was covered by the sea millions of years ago. It's also a base for exploring the nearby dunes.</p>
+                        <a href="#" class="card-link">Explore Erfoud <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/mhamid.jpg" alt="M'hamid El Ghizlane oasis town" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">M'hamid El Ghizlane</h3>
+                        <p class="card-text">The last oasis before the vast Sahara, M'hamid marks the end of the paved road and the beginning of the great desert. From here, travelers can access the remote Erg Chigaga dunes, less visited than Erg Chebbi but equally spectacular.</p>
+                        <a href="#" class="card-link">Explore M'hamid <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/dakhla.jpg" alt="Coastal view of Dakhla, Western Sahara" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Dakhla</h3>
+                        <p class="card-text">Located on a peninsula in the Western Sahara, Dakhla offers a unique combination of desert and Atlantic Ocean. It has become a popular destination for kitesurfing and windsurfing, while still maintaining its desert character and Sahrawi cultural influences.</p>
+                        <a href="#" class="card-link">Explore Dakhla <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Green Spaces Section -->
+    <section id="green-spaces" class="eco-tips">
+        <div class="container">
+            <h2 class="section-title">Oases of the Moroccan Sahara</h2>
+            <p class="section-intro">The life-giving oases of the Moroccan Sahara have sustained communities for millennia, creating striking green havens amid the arid landscape.</p>
+            
+            <div class="card-container">
+                <div class="card" data-aos="fade-up">
+                    <img src="images/draa-valley.jpg" alt="Palm groves in the Draa Valley, Morocco" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Draa Valley</h3>
+                        <p class="card-text">Morocco's longest river creates a lush 100km corridor of date palms, creating one of North Africa's most spectacular oases. Ancient kasbahs and fortified villages (ksour) dot the valley, while traditional farming methods have remained unchanged for centuries.</p>
+                        <a href="#" class="card-link">Discover more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/fint-oasis.jpg" alt="Fint Oasis near Ouarzazate" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Fint Oasis</h3>
+                        <p class="card-text">This hidden gem near Ouarzazate feels like stepping back in time. Four traditional villages surround the palm-fringed stream, with no paved roads connecting them to the outside world. The contrast between the lush vegetation and surrounding arid mountains is striking.</p>
+                        <a href="#" class="card-link">Discover more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/ziz-valley.jpg" alt="Ziz Valley oasis in Morocco" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Ziz Valley</h3>
+                        <p class="card-text">Stretching from the High Atlas to Erfoud, this spectacular river valley contains over a quarter million date palms. The dramatic gorge section near the Ziz Gorges offers breathtaking views of the palm oasis below, contrasting with the surrounding desert landscape.</p>
+                        <a href="#" class="card-link">Discover more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-container" style="margin-top: 2rem;">
+                <div class="card" data-aos="fade-up">
+                    <img src="images/skoura.jpg" alt="Palm grove in Skoura, Morocco" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Skoura Palm Grove</h3>
+                        <p class="card-text">Known as "The Palm Grove of 1000 Kasbahs," Skoura's dense palm oasis houses impressive fortified dwellings including the famous Amridil Kasbah. The ancient khettara underground irrigation system still waters this fertile oasis, supporting olive, almond, and fig cultivation.</p>
+                        <a href="#" class="card-link">Discover more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/todra.jpg" alt="Todra Gorge and palm oasis in Morocco" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Todra Oasis</h3>
+                        <p class="card-text">At the edge of the Sahara, the Todra River creates a lush valley before cutting through the dramatic Todra Gorge. The contrast between the sheer rock walls and the green palm groves makes this one of Morocco's most photogenic locations and a popular rock climbing destination.</p>
+                        <a href="#" class="card-link">Discover more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="images/tamegroute.jpg" alt="Gardens of Tamegroute, Morocco" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Tamegroute Gardens</h3>
+                        <p class="card-text">This oasis near Zagora is home to one of Morocco's oldest libraries containing rare Islamic manuscripts. The surrounding gardens demonstrate the ingenious irrigation techniques that have allowed desert agriculture to flourish, while the area is also known for its distinctive green pottery.</p>
+                        <a href="#" class="card-link">Discover more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map" class="featured-section">
+        <div class="container">
+            <h2 class="section-title">Exploring the Moroccan Sahara</h2>
+            <p class="section-intro">The Moroccan Sahara encompasses the country's southern regions, offering diverse landscapes from the Atlantic coast to the Algerian border.</p>
+            
+            <div class="map-container" data-aos="fade-up">
+                <div id="morocco-map" class="interactive-map"></div>
+                <div class="map-info">
+                    <h3>Key Regions of the Moroccan Sahara</h3>
+                    <p>The Moroccan Sahara can be divided into several distinct regions:</p>
+                    <ul class="map-regions">
+                        <li><strong>Eastern Region:</strong> Featuring Erg Chebbi dunes near Merzouga and the fossil-rich areas around Erfoud</li>
+                        <li><strong>Draa Valley:</strong> Following Morocco's longest river from Ouarzazate to Zagora and beyond</li>
+                        <li><strong>Middle Sahara:</strong> Including the remote Erg Chigaga dunes and M'hamid El Ghizlane</li>
+                        <li><strong>Western Sahara:</strong> The disputed territory extending to the Atlantic coast, including Laayoune and Dakhla</li>
+                        <li><strong>Anti-Atlas Fringe:</strong> The transitional zone between mountains and desert, including Tata and Tafraoute</li>
+                    </ul>
+                    <p class="map-note">The best times to visit are spring (March-May) and fall (September-November) when temperatures are moderate. Summer can be extremely hot, while winter nights can be surprisingly cold.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7-Day Itinerary Section -->
+    <section id="itinerary" class="eco-tips">
+        <div class="container">
+            <h2 class="section-title">7-Day Moroccan Sahara Adventure</h2>
+            <p class="section-intro">Experience the magic of the Moroccan Sahara with our carefully crafted 7-day itinerary, designed to showcase the region's highlights.</p>
+            
+            <div class="itinerary-timeline">
+                <div class="itinerary-day" data-aos="fade-right">
+                    <div class="day-number">Day 1</div>
+                    <div class="day-content">
+                        <h3>Marrakech to Ouarzazate</h3>
+                        <p>Begin your Sahara adventure in Marrakech, crossing the spectacular High Atlas Mountains via the Tizi n'Tichka pass (2,260m). Visit the UNESCO World Heritage site of Aït Benhaddou kasbah before arriving in Ouarzazate, the "Hollywood of Morocco."</p>
+                        <ul class="day-highlights">
+                            <li>Scenic drive through Atlas Mountains</li>
+                            <li>Guided tour of Aït Benhaddou</li>
+                            <li>Visit to Atlas Film Studios</li>
+                            <li>Overnight in Ouarzazate</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="itinerary-day" data-aos="fade-left">
+                    <div class="day-number">Day 2</div>
+                    <div class="day-content">
+                        <h3>Ouarzazate to Dades Valley</h3>
+                        <p>Journey through the "Road of a Thousand Kasbahs" to the spectacular Dades Gorge. Explore the rose-growing region around Kelaat M'Gouna and the dramatic rock formations known as "Monkey Fingers" in the upper Dades Valley.</p>
+                        <ul class="day-highlights">
+                            <li>Visit to Taourirt Kasbah in Ouarzazate</li>
+                            <li>Stop at rose cooperatives (in season)</li>
+                            <li>Hike in the Dades Gorge</li>
+                            <li>Overnight in a traditional kasbah hotel</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="itinerary-day" data-aos="fade-right">
+                    <div class="day-number">Day 3</div>
+                    <div class="day-content">
+                        <h3>Dades to Merzouga</h3>
+                        <p>Continue your journey to the Sahara proper, stopping at the spectacular Todra Gorge for a short hike. Visit the fossil workshops of Erfoud before arriving at Merzouga on the edge of the Erg Chebbi dunes.</p>
+                        <ul class="day-highlights">
+                            <li>Morning walk in Todra Gorge</li>
+                            <li>Fossil museum and workshop visit</li>
+                            <li>First glimpse of the Sahara's great dunes</li>
+                            <li>Sunset camel ride</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="itinerary-day" data-aos="fade-left">
+                    <div class="day-number">Day 4</div>
+                    <div class="day-content">
+                        <h3>Desert Experience</h3>
+                        <p>Full day experiencing the magic of the Sahara. Wake early for a spectacular sunrise over the dunes. Visit nomad families and the oasis of Khamlia to hear Gnawa music. Spend the night in a luxury desert camp under the stars.</p>
+                        <ul class="day-highlights">
+                            <li>Sunrise over the dunes</li>
+                            <li>4x4 desert exploration</li>
+                            <li>Visit to Gnawa musicians in Khamlia</li>
+                            <li>Sandboarding and stargazing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="itinerary-day" data-aos="fade-right">
+                    <div class="day-number">Day 5</div>
+                    <div class="day-content">
+                        <h3>Merzouga to Zagora</h3>
+                        <p>Cross the Anti-Atlas mountains via Rissani and Alnif to reach the Draa Valley. Visit the ancient library of Tamegroute and continue to Zagora, surrounded by the largest palm grove in Morocco.</p>
+                        <ul class="day-highlights">
+                            <li>Visit to Rissani market (if on market day)</li>
+                            <li>Scenic drive through changing desert landscapes</li>
+                            <li>Tour of Tamegroute's ancient library and pottery workshops</li>
+                            <li>Overnight in Zagora</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="itinerary-day" data-aos="fade-left">
+                    <div class="day-number">Day 6</div>
+                    <div class="day-content">
+                        <h3>Zagora to Ouarzazate</h3>
+                        <p>Journey north through the spectacular Draa Valley with its endless palm groves and ancient kasbahs. Stop at Agdz to explore the palm oasis and continue to Ouarzazate via Tamnougalt kasbah.</p>
+                        <ul class="day-highlights">
+                            <li>Visit to Tamnougalt kasbah</li>
+                            <li>Walk through palm groves</li>
+                            <li>Panoramic views from Tizi-n-Tinififft pass</li>
+                            <li>Overnight in Ouarzazate</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="itinerary-day" data-aos="fade-right">
+                    <div class="day-number">Day 7</div>
+                    <div class="day-content">
+                        <h3>Return to Marrakech</h3>
+                        <p>Complete your Saharan journey with a return to Marrakech. Take a different route through the Atlas Mountains if time permits, stopping at traditional Berber villages along the way.</p>
+                        <ul class="day-highlights">
+                            <li>Visit to Telouet Kasbah (former palace of the Glaoui family)</li>
+                            <li>Scenic stops in the Atlas Mountains</li>
+                            <li>Berber village visit with traditional mint tea</li>
+                            <li>Return to Marrakech by evening</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="booking-cta" data-aos="fade-up">
+                <h3>Ready for Your Moroccan Sahara Adventure?</h3>
+                <p>This itinerary can be customized based on your interests, time constraints, and the season of your visit.</p>
+                <a href="#contact" class="btn">Book Your Journey</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Stay Updated on Moroccan Desert Travel</h2>
+            <p>Subscribe to our newsletter for travel tips, seasonal recommendations, and special offers.</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Your email address">
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>We specialize in creating unforgettable Moroccan Sahara experiences that respect local cultures and the environment.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#culture">Culture</a></li>
+                        <li><a href="#cities">Cities</a></li>
+                        <li><a href="#green-spaces">Oases</a></li>
+                        <li><a href="#map">Map</a></li>
+                        <li><a href="#itinerary">7-Day Tour</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Kasbah Road, Marrakech, Morocco</li>
+                        <li><i class="fas fa-phone"></i> +212 5XX-XXXXXX</li>
+                        <li><i class="fas fa-envelope"></i> info@moroccan-sahara.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Moroccan Sahara Explorer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

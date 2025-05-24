@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Blog Posts | EcoMorocco</title>
+    <link rel="stylesheet" href="../static/styles/style.css">
+    <link rel="stylesheet" href="../blog/blog-style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease;
+        }
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .blog-card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        .blog-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .blog-card:hover img {
+            transform: scale(1.05);
+        }
+        .blog-content {
+            padding: 2rem;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.95), #fff);
+        }
+        .blog-content h2 {
+            margin: 0 0 1rem;
+            font-size: 1.8rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        .blog-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        .read-more {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #2ecc71;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+        .read-more:hover {
+            background: #27ae60;
+            transform: translateX(5px);
+        }
+        .blog-header {
+            text-align: center;
+            padding: 12rem 2rem 8rem;
+            margin-top: 0;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1539635278303-d4002c07eae3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .blog-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .blog-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .category-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(46, 204, 113, 0.9);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+                padding: 2rem 1rem;
+            }
+            .blog-header {
+                padding: 4rem 1rem;
+            }
+            .blog-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-leaf">🍃</span>EcoMorocco
+        </div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="blogs.html">Blog</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="blog-header">
+        <h1>Eco Travel Stories</h1>
+        <p>Discover sustainable travel experiences, local culture, and eco-friendly tips for exploring Morocco's breathtaking landscapes while preserving its natural beauty.</p>
+    </header>
+
+    <main class="blog-grid">
+        <article class="blog-card">
+            <span class="category-tag">Sustainable Travel</span>
+            <img src="../static/images/plastic.jpg" alt="Plastic Free Travel">
+            <div class="blog-content">
+                <h2>Guide to Plastic-Free Travel</h2>
+                <p>Discover practical ways to minimize your plastic footprint while exploring Morocco. From reusable water solutions to eco-friendly shopping tips, learn how to make a positive impact on your journey.</p>
+                <a href="../blog/plastic-free-guide.html" class="read-more">Read More</a>
+            </div>
+        </article>
+
+        <article class="blog-card">
+            <span class="category-tag">Community Tourism</span>
+            <img src="../static/images/tourism.jpg" alt="Community Tourism">
+            <div class="blog-content">
+                <h2>Community-Based Tourism</h2>
+                <p>Experience authentic Moroccan life through community tourism initiatives. Meet local artisans, stay with families, and contribute directly to sustainable community development.</p>
+                <a href="../blog/community-tourism.html" class="read-more">Read More</a>
+            </div>
+        </article>
+
+        <article class="blog-card">
+            <span class="category-tag">Accommodation</span>
+            <img src="../static/images/riad.jpg" alt="Eco-Friendly Riads">
+            <div class="blog-content">
+                <h2>Eco-Friendly Riads in Morocco</h2>
+                <p>Discover stunning traditional Moroccan riads that combine luxury with sustainability. From solar-powered facilities to water conservation systems, these accommodations set new standards in eco-tourism.</p>
+                <a href="../blog/eco-friendly-riads.html" class="read-more">Read More</a>
+            </div>
+        </article>
+        <article class="blog-card">
+            <span class="category-tag">Accommodation</span>
+            <img src="../static/images/riad.jpg" alt="Eco-Friendly Riads">
+            <div class="blog-content">
+                <h2>Eco-Friendly Riads in Morocco</h2>
+                <p>Discover stunning traditional Moroccan riads that combine luxury with sustainability. From solar-powered facilities to water conservation systems, these accommodations set new standards in eco-tourism.</p>
+                <a href="../blog/eco-friendly-riads.html" class="read-more">Read More</a>
+            </div>
+        </article>
+        <article class="blog-card">
+            <span class="category-tag">Accommodation</span>
+            <img src="../static/images/riad.jpg" alt="Eco-Friendly Riads">
+            <div class="blog-content">
+                <h2>Eco-Friendly Riads in Morocco</h2>
+                <p>Discover stunning traditional Moroccan riads that combine luxury with sustainability. From solar-powered facilities to water conservation systems, these accommodations set new standards in eco-tourism.</p>
+                <a href="../blog/eco-friendly-riads.html" class="read-more">Read More</a>
+            </div>
+        </article>
+
+        <article class="blog-card">
+            <span class="category-tag">Nature</span>
+            <img src="../static/images/atlas.jpg" 
+                 alt="Atlas Mountains">
+            <div class="blog-content">
+                <h2>Atlas Mountains: A Sustainable Guide</h2>
+                <p>Explore the majestic Atlas Mountains responsibly. Learn about local conservation efforts, best hiking practices, and how to support mountain communities during your visit.</p>
+                <a href="../blog/chefchaouen.html" class="read-more">Read More</a>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About EcoMorocco</h3>
+                    <p>We're dedicated to promoting responsible travel that preserves Morocco's natural beauty and cultural heritage while supporting local communities.</p>
+                    <div class="social-links">
+                        <a href="#">FB</a>
+                        <a href="#">IG</a>
+                        <a href="#">TW</a>
+                        <a href="#">YT</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="culture-and-food.html">Culture & Food</a></li>
+                        <li><a href="#tips">Eco Tips</a></li>
+                        <li><a href="blogs.html">Blog</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Eco Partners</h3>
+                    <ul>
+                        <li><a href="#">Morocco Ecotourism Association</a></li>
+                        <li><a href="#">Green Key Morocco</a></li>
+                        <li><a href="#">Atlas Mountain Conservation</a></li>
+                        <li><a href="#">Marine Protection Alliance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>Email: info@ecomorocco.com</li>
+                        <li>Phone: +212 555-123-456</li>
+                        <li>Address: 123 Eco Street, Rabat, Morocco</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 EcoMorocco. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../static/js/scripts.js"></script>
+    <script>
+        // Add scroll effect for navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

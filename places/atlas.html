@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas Mountains - Natural Wonder of North Africa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../static/styles/atlas.css">
+    <style>
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease;
+        }
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+        }
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+        <div class="logo">
+            <span class="logo-leaf">🍃</span>EcoMorocco
+        </div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../pages/destinations.html">Destinations</a></li>
+            <li><a href="../pages/blogs.html">Blog</a></li>
+            <li><a href="../pages/about.html">About Us</a></li>
+            <li><a href="../pages/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="content">
+            <h1>Atlas Mountains</h1>
+            <p>Discover the majesty of North Africa's highest mountain range, spanning Morocco, Algeria, and Tunisia. A land of breathtaking landscapes, rich culture, and ancient traditions.</p>
+            <a href="#overview" class="btn">Explore More</a>
+        </div>
+    </section>
+
+    <!-- Quick Navigation -->
+    <div class="quick-nav">
+        <div class="container">
+            <ul class="region-nav">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#culture">Culture & Food</a></li>
+                <li><a href="#history">History</a></li>
+                <li><a href="#cities">Cities</a></li>
+                <li><a href="#greenspaces">Green Spaces</a></li>
+                <li><a href="#itinerary">7-Day Tour</a></li>
+                <li><a href="#map">Map</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Overview Section -->
+    <section id="overview" class="featured-section">
+        <div class="container">
+            <h2 class="section-title">Atlas Mountains Overview</h2>
+            <div class="culture-content">
+                <div class="culture-info">
+                    <h3>The Magnificent Atlas Range</h3>
+                    <p>The Atlas Mountains are a mountain range stretching across Northwestern Africa, extending about 2,500 km (1,600 mi) through Morocco, Algeria, and Tunisia. The highest peak is Toubkal, which rises to 4,167 meters (13,671 ft) in southwestern Morocco.</p>
+                    <p>The mountains form a natural barrier between the Mediterranean and Atlantic coastlines and the Sahara Desert. This strategic location has shaped the region's history, culture, and ecology for thousands of years.</p>
+                    <p>The Atlas range is divided into several distinct sections:</p>
+                    <ul>
+                        <li>High Atlas - The highest and most rugged, located in central Morocco</li>
+                        <li>Middle Atlas - Northernmost and second highest massif</li>
+                        <li>Anti-Atlas - More arid and lower elevation than the High Atlas</li>
+                        <li>Tell Atlas - Running parallel to the Mediterranean coast</li>
+                        <li>Saharan Atlas - Defining the northern edge of the Sahara Desert</li>
+                    </ul>
+                    <p>With varying elevations, the Atlas Mountains feature diverse ecosystems ranging from Mediterranean forests at lower elevations to barren rocky landscapes at higher altitudes.</p>
+                </div>
+                <img src="images/atlas img/atlas.jpg" alt="Atlas Mountains Landscape" class="culture-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section id="culture" class="culture-section">
+        <div class="container">
+            <h2 class="section-title">Culture & Lifestyle</h2>
+            
+            <!-- Food Section -->
+            <div class="culture-content">
+                <img src="images/atlas img/tajine.jpg" alt="Traditional Moroccan Tajine" class="culture-img">
+                <div class="culture-info">
+                    <h3>Culinary Traditions</h3>
+                    <div class="food-spotlight">
+                        <h4>Famous Atlas Mountain Dishes</h4>
+                        <ul>
+                            <li><strong>Tajine</strong> - A slow-cooked stew named after the earthenware pot it's cooked in, typically with meat, vegetables, and aromatic spices.</li>
+                            <li><strong>Couscous</strong> - The traditional Berber dish of steamed semolina usually served with vegetables and meat.</li>
+                            <li><strong>Berber Omelet</strong> - Cooked in a tajine with tomatoes, onions, and spices.</li>
+                            <li><strong>Mechoui</strong> - Whole lamb roasted in a pit oven, often prepared for celebrations.</li>
+                            <li><strong>Mint Tea</strong> - Known as "Moroccan whiskey," this sweet mint tea is a symbol of hospitality.</li>
+                            <li><strong>Khobz</strong> - Traditional round flatbread baked in communal ovens.</li>
+                            <li><strong>Amlou</strong> - A thick spread made from argan oil, almonds, and honey.</li>
+                        </ul>
+                        <p>Most dishes in the Atlas Mountains region feature local ingredients including olive oil, dates, almonds, and aromatic herbs. The cuisine reflects the self-sufficient agricultural traditions of the mountain communities.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Traditional Culture Section -->
+            <div class="culture-content">
+                <div class="culture-info">
+                    <h3>Cultural Heritage</h3>
+                    <div class="culture-details">
+                        <h4>Berber Culture & Traditions</h4>
+                        <p>The Atlas Mountains are home to the Berber people (Amazigh), the indigenous inhabitants of North Africa. Their culture is characterized by:</p>
+                        <ul>
+                            <li>Strong oral traditions including storytelling, poetry, and songs</li>
+                            <li>Communal living and agricultural practices</li>
+                            <li>Traditional music featuring instruments like the bendir (frame drum) and rabab (string instrument)</li>
+                            <li>Colorful festivals celebrating harvest seasons and religious events</li>
+                            <li>A tradition of hospitality to visitors and travelers</li>
+                            <li>Close connection to the natural environment</li>
+                        </ul>
+                        <p>Despite centuries of outside influence, Berber culture has maintained its unique identity and continues to thrive in mountain communities.</p>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Berber Cultural Celebration" class="culture-img">
+            </div>
+            
+            <!-- Languages Section -->
+            <div class="culture-content">
+                <img src="images/atlas img/tamazight.jpg" alt="Berber Script and Language" class="culture-img">
+                <div class="culture-info">
+                    <h3>Languages</h3>
+                    <div class="culture-details">
+                        <h4>Linguistic Diversity</h4>
+                        <p>The Atlas region is linguistically diverse with several languages and dialects:</p>
+                        <ul>
+                            <li><strong>Tamazight (Berber)</strong> - The indigenous language with various dialects including Tashelhit, Tarifyt, and Central Atlas Tamazight</li>
+                            <li><strong>Arabic</strong> - Both Modern Standard Arabic and Moroccan Darija (dialect) are widely spoken</li>
+                            <li><strong>French</strong> - Common in urban areas and among educated populations due to colonial influence</li>
+                            <li><strong>Spanish</strong> - Some influence in northern regions</li>
+                        </ul>
+                        <p>In 2011, Tamazight was officially recognized as an official language in Morocco alongside Arabic, helping to preserve this ancient linguistic heritage.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Traditional Clothing Section -->
+            <div class="culture-content">
+                <div class="culture-info">
+                    <h3>Traditional Attire</h3>
+                    <div class="culture-details">
+                        <h4>Atlas Mountain Clothing</h4>
+                        <p>Traditional clothing in the Atlas Mountains is both functional and culturally significant:</p>
+                        <ul>
+                            <li><strong>Djellaba</strong> - A long, loose-fitting outer robe with full sleeves and a hood</li>
+                            <li><strong>Burnous</strong> - A hooded cloak typically made of wool, perfect for cold mountain climates</li>
+                            <li><strong>Handira</strong> - Traditional wedding blankets made by Berber women, adorned with sequins and intricate designs</li>
+                            <li><strong>Caftan</strong> - Elegant garments often worn for special occasions</li>
+                            <li><strong>Headwear</strong> - Turbans for men and colorful headscarves for women</li>
+                            <li><strong>Jewelry</strong> - Silver jewelry with coral, amber, and semiprecious stones, often featuring geometric Berber designs</li>
+                        </ul>
+                        <p>Clothing varies between regions and reflects local traditions, available materials, and practical considerations for mountain living. The colorful textiles and intricate embroidery showcase the artistic traditions that have been passed down through generations.</p>
+                    </div>
+                </div>
+                <img src="images/atlas img/women-clothes.jpg" alt="Traditional Atlas Mountain Clothing" class="culture-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section id="history" class="featured-section">
+        <div class="container">
+            <h2 class="section-title">History of the Atlas Mountains</h2>
+            <div class="history-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Prehistoric Era</h3>
+                        <p>The Atlas Mountains region shows evidence of human habitation dating back over 12,000 years. Cave paintings and archaeological sites reveal early hunter-gatherer societies that eventually developed into agricultural communities.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Ancient Berber Kingdoms (500 BCE - 40 CE)</h3>
+                        <p>The indigenous Berber people established powerful kingdoms including Mauritania and Numidia, controlling trade routes through the mountains and developing distinctive cultural traditions.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Roman Period (40 CE - 429 CE)</h3>
+                        <p>Roman influence extended to parts of the Atlas region, particularly in the northern ranges. Remains of Roman settlements can still be found, though many mountain communities remained independent.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Islamic Conquest (7th-8th Centuries)</h3>
+                        <p>Arab armies brought Islam to North Africa, fundamentally changing the region's cultural landscape. Many Berber tribes embraced Islam while maintaining their distinct identity.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Berber Dynasties (11th-16th Centuries)</h3>
+                        <p>Several powerful Berber dynasties emerged from the Atlas Mountains, including the Almoravids and Almohads, who built vast empires extending into Spain and across North Africa.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Colonial Period (19th-20th Centuries)</h3>
+                        <p>European powers, primarily France and Spain, colonized North Africa. The Atlas Mountains often served as strongholds for resistance movements due to their rugged terrain.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Independence Era (Mid-20th Century)</h3>
+                        <p>Morocco, Algeria, and Tunisia gained independence from colonial powers, beginning new chapters in their national histories while working to preserve the cultural heritage of the Atlas region.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Modern Era (Present Day)</h3>
+                        <p>Today, the Atlas Mountains balance traditional ways of life with modern development, supporting growing tourism while working to preserve their unique cultural and natural heritage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cities Section -->
+    <section id="cities" class="cities-section">
+        <div class="container">
+            <h2 class="section-title">Famous Cities in the Atlas Mountains</h2>
+            <div class="card-container">
+                <div class="city-card">
+                    <img src="images/atlas img/kech.jpg" alt="Marrakech" class="city-img">
+                    <div class="city-info">
+                        <h3>Marrakech</h3>
+                        <p>Located at the foothills of the Atlas Mountains, Marrakech serves as the gateway to the range. Known for its vibrant medina, bustling souks, and the iconic Jemaa el-Fnaa square. The red city offers a perfect blend of cultural experiences before ascending into the mountains.</p>
+                        <a href="marrakech.html" class="card-link">Learn more</a>
+                    </div>
+                </div>
+                
+                <div class="city-card">
+                    <img src="images/atlas img/ouarzazat.jpg" alt="Ouarzazate" class="city-img">
+                    <div class="city-info">
+                        <h3>Ouarzazate</h3>
+                        <p>Known as "The Door of the Desert," this city sits where the Atlas Mountains meet the Sahara. Famous for its film studios where movies like Gladiator and Game of Thrones were filmed, and the impressive Ait Ben Haddou kasbah, a UNESCO World Heritage site.</p>
+                        <a href="#" class="card-link">Learn more</a>
+                    </div>
+                </div>
+                
+                <div class="city-card">
+                    <img src="images/atlas img/i,lil.jpg" alt="Imlil" class="city-img">
+                    <div class="city-info">
+                        <h3>Imlil</h3>
+                        <p>A small mountain village serving as the main base for climbing Mount Toubkal, North Africa's highest peak. This charming settlement offers authentic Berber hospitality and stunning views of the High Atlas, making it popular with trekkers and nature enthusiasts.</p>
+                        <a href="#" class="card-link">Learn more</a>
+                    </div>
+                </div>
+                
+                <div class="city-card">
+                    <img src="../static/images/chefchaouen/chef1.jpg" alt="Chefchaouen" class="city-img">
+                    <div class="city-info">
+                        <h3>Chefchaouen</h3>
+                        <p>Located in the Rif Mountains (an extension of the Atlas system), this "Blue City" is famous for its striking blue-washed buildings. The picturesque town offers a relaxed atmosphere, distinctive architecture, and serves as a hub for exploring the surrounding natural landscapes.</p>
+                        <a href="../places/chefchaouen.html" class="card-link">Learn more</a>
+                    </div>
+                </div>
+                
+                <div class="city-card">
+                    <img src="images/atlas img/azrou.jpg" alt="Azrou" class="city-img">
+                    <div class="city-info">
+                        <h3>Azrou</h3>
+                        <p>A Berber town in the Middle Atlas known for its cedar forests home to Barbary macaques. The town is a center for traditional crafts, especially woodworking and carpet making, and offers a glimpse into authentic mountain life away from major tourist routes.</p>
+                        <a href="#" class="card-link">Learn more</a>
+                    </div>
+                </div>
+                
+                <div class="city-card">
+                    <img src="images/atlas img/tinghir.jpg" alt="Tinghir" class="city-img">
+                    <div class="city-info">
+                        <h3>Tinghir</h3>
+                        <p>An oasis city located between the High Atlas and the Anti-Atlas mountains. Famous for its proximity to the spectacular Todgha Gorge, whose dramatic cliff walls rise 300 meters on either side of a crystal-clear river, creating one of Morocco's most breathtaking natural sights.</p>
+                        <a href="#" class="card-link">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Green Spaces Section -->
+    <section id="greenspaces" class="greenspaces-section">
+        <div class="container">
+            <h2 class="section-title">Famous Natural Areas & Green Spaces</h2>
+            <div class="card-container">
+                <div class="card">
+                    <img src="images/atlas img/tobkal.jpg" alt="Toubkal National Park" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Toubkal National Park</h3>
+                        <p class="card-text">Established in 1942, this national park encompasses North Africa's highest peak, Mount Toubkal. The park features diverse landscapes including alpine zones, cedar forests, and deep valleys. It's home to rare wildlife like the Barbary macaque and the Atlas Mountain viper.</p>
+                        <a href="#" class="card-link">Explore more</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="images/atlas img/ifran.jpg" alt="Ifrane National Park" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Ifrane National Park</h3>
+                        <p class="card-text">Located in the Middle Atlas, this park is known for its ancient cedar forests, some trees being over 800 years old. The park is a sanctuary for the endangered Barbary macaque and numerous bird species. Its alpine-like landscape with lakes and meadows has earned Ifrane the nickname "Little Switzerland."</p>
+                        <a href="#" class="card-link">Explore more</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="images/atlas img/todgha.jpg" alt="Todgha Gorge" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Todgha Gorge</h3>
+                        <p class="card-text">A spectacular canyon in the eastern part of the High Atlas Mountains. The gorge features limestone river canyons with cliffs rising up to 400 meters. The area is a paradise for rock climbers and nature lovers, with a river running through its base creating small oases of green.</p>
+                        <a href="#" class="card-link">Explore more</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="images/atlas img/dads.jpg" alt="Dades Valley" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Dades Valley</h3>
+                        <p class="card-text">Known as "The Valley of a Thousand Kasbahs," this dramatic landscape features red rock formations, ancient fortresses, and fertile agricultural areas. The contrast between the barren mountains and the green valley floor cultivated with almond and fig trees creates a stunning visual experience.</p>
+                        <a href="#" class="card-link">Explore more</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="images/atlas img/chelal.jpg" alt="Ouzoud Waterfalls" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Ouzoud Waterfalls</h3>
+                        <p class="card-text">Located in the Middle Atlas, these are among North Africa's most spectacular waterfalls, dropping over 100 meters through multiple tiers. The surrounding olive groves and lush vegetation create a cool microclimate that supports diverse plant and animal life, including colonies of Barbary macaques.</p>
+                        <a href="#" class="card-link">Explore more</a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="images/atlas img/img.jpg" alt="Paradise Valley" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Paradise Valley</h3>
+                        <p class="card-text">A hidden gem in the foothills of the High Atlas near Agadir, featuring natural swimming pools with crystal clear water, palm trees, and smooth rocks. This oasis-like valley offers a refreshing escape from the heat with its cascading waterfalls and abundant vegetation.</p>
+                        <a href="#" class="card-link">Explore more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7-Day Itinerary Section -->
+    <section id="itinerary" class="itinerary-section">
+        <div class="container">
+            <h2 class="section-title">7-Day Atlas Mountains Tour</h2>
+            <p style="text-align: center; margin-bottom: 3rem;">Experience the best of the Atlas Mountains with our carefully curated 7-day itinerary designed for visitors looking to immerse themselves in the region's natural beauty and cultural heritage.</p>
+            
+            <div class="day-card">
+                <h3>Day 1: Marrakech - Gateway to the Atlas</h3>
+                <p><strong>Morning:</strong> Arrive in Marrakech and settle into your accommodation.</p>
+                <p><strong>Afternoon:</strong> Explore the historic medina, visit Bahia Palace and the Koutoubia Mosque.</p>
+                <p><strong>Evening:</strong> Enjoy dinner at Jemaa el-Fnaa square and prepare for your mountain adventure.</p>
+                <p><strong>Accommodation:</strong> Traditional riad in Marrakech.</p>
+            </div>
+            
+            <div class="day-card">
+                <h3>Day 2: Marrakech to Imlil - Entering the Mountains</h3>
+                <p><strong>Morning:</strong> Depart Marrakech for the 1.5-hour drive to Imlil village (1,740m).</p>
+                <p><strong>Afternoon:</strong> Short acclimatization hike to Armed, the highest village in the Imlil Valley.</p>
+                <p><strong>Evening:</strong> Traditional Berber dinner and overnight stay in a mountain lodge.</p>
+                <p><strong>Accommodation:</strong> Guesthouse in Imlil with views of Mount Toubkal.</p>
+            </div>
+            
+            <div class="day-card">
+                <h3>Day 3: Imlil to Toubkal Refuge</h3>
+                <p><strong>Morning:</strong> Begin trekking through walnut groves and Berber villages.</p>
+                <p><strong>Afternoon:</strong> Continue ascending to the Toubkal Refuge (3,207m), enjoying spectacular mountain views.</p>
+                <p><strong>Evening:</strong> Rest and acclimatize at the refuge, preparing for summit day.</p>
+                <p><strong>Accommodation:</strong> Mountain refuge dormitory.</p>
+            </div>
+            
+            <div class="day-card">
+                <h3>Day 4: Mount Toubkal Summit Day</h3>
+                <p><strong>Early Morning:</strong> Pre-dawn start for summit attempt of North Africa's highest peak (4,167m).</p>
+                <p><strong>Afternoon:</strong> Descend back to the refuge and continue down to Imlil.</p>
+                <p><strong>Evening:</strong> Celebration dinner and relaxation after the challenging day.</p>
+                <p><strong>Accommodation:</strong> Comfortable guesthouse in Imlil.</p>
+            </div>
+            
+            <div class="day-card">
+                <h3>Day 5: Imlil to Ouarzazate via Tizi n'Tichka Pass</h3>
+                <p><strong>Morning:</strong> Depart Imlil, crossing the spectacular Tizi n'Tichka mountain pass (2,260m).</p>
+                <p><strong>Afternoon:</strong> Visit Ait Ben Haddou kasbah, a UNESCO World Heritage site.</p>
+                <p><strong>Evening:</strong> Arrive in Ouarzazate, explore the town known as the "Hollywood of Morocco."</p>
+                <p><strong>Accommodation:</strong> Hotel in Ouarzazate.</p>
+            </div>
+            
+            <div class="day-card">
+                <h3>Day 6: Ouarzazate to Dades Valley & Todgha Gorge</h3>
+                <p><strong>Morning:</strong> Drive through the Valley of Roses to the dramatic Dades Valley.</p>
+                <p><strong>Afternoon:</strong> Explore the towering walls of Todgha Gorge, with time for a short hike.</p>
+                <p><strong>Evening:</strong> Dinner and overnight in a hotel nestled in the gorge.</p>
+                <p><strong>Accommodation:</strong> Boutique hotel in Todgha Gorge.</p>
+            </div>
+            
+            <div class="day-card">
+                <h3>Day 7: Return to Marrakech via Ouzoud Waterfalls</h3>
+                <p><strong>Morning:</strong> Early departure for the journey back toward Marrakech.</p>
+                <p><strong>Afternoon:</strong> Stop at the spectacular Ouzoud Waterfalls for lunch and exploration.</p>
+                <p><strong>Evening:</strong> Return to Marrakech, farewell dinner in the medina.</p>
+                <p><strong>Note:</strong> Option to extend your stay or connect to other destinations.</p>
+            </div>
+            
+            <p style="text-align: center; margin-top: 2rem;">This itinerary combines challenging hiking, cultural experiences, and natural wonders for a comprehensive Atlas Mountains adventure. The tour can be customized based on fitness levels and interests.</p>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map" class="map-section">
+        <div class="container">
+            <h2 class="section-title">Atlas Mountains Map</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404082.9932776546!2d-8.805035384668453!3d31.79894252386877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b88f383b05ad1%3A0x7468d4fb2d09677e!2sAtlas%20Mountains!5e0!3m2!1sen!2sus!4v1589215411195!5m2!1sen!2sus" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+            <p style="text-align: center; margin-top: 1rem;">Explore the vast Atlas Mountain range spanning Morocco, Algeria, and Tunisia.</p>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Stay updated with the latest travel tips, tour packages, and special offers for Atlas Mountains adventures.</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>We are dedicated to showcasing the beauty and cultural richness of the Atlas Mountains to travelers from around the world.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#culture">Culture & Food</a></li>
+                        <li><a href="#history">History</a></li>
+                        <li><a href="#cities">Cities</a></li>
+                        <li><a href="#greenspaces">Green Spaces</a></li>
+                        <li><a href="#itinerary">7-Day Tour</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Atlas Street, Marrakech, Morocco</li>
+                        <li><i class="fas fa-phone"></i> +212 5XX-XXXXXX</li>
+                        <li><i class="fas fa-envelope"></i> info@atlasexplorer.com</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Travel Tips</h3>
+                    <ul>
+                        <li><a href="#">Best Time to Visit</a></li>
+                        <li><a href="#">What to Pack</a></li>
+                        <li><a href="#">Health & Safety</a></li>
+                        <li><a href="#">Responsible Tourism</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Atlas Explorer. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for interactive elements -->
+    <script src="../static/js/sahara.js"></script>
+        
+        
+    </script>
+</body>
+</html>

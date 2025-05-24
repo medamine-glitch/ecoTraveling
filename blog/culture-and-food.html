@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/styles/style.css">
+    <link rel="stylesheet" href="../static/styles/blog-style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the rich cultural heritage and culinary traditions of Morocco's diverse regions - from the Atlas Mountains to the Sahara Desert.">
+    <meta name="keywords" content="Moroccan culture, Moroccan food, Berber traditions, Atlas Mountains culture, Sahara Desert culture, Moroccan cuisine">
+    <title>Moroccan Culture & Cuisine Guide - EcoMorocco</title>
+</head>
+<style>
+    .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease;
+        }
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+        }
+        .hero {
+            padding-top: 80px;
+            min-height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .culture-content img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px 15px 0 0;
+            transition: transform 0.3s ease;
+        }
+        .card:hover img {
+            transform: scale(1.05);
+        }
+</style>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+        <div class="logo">
+            <span class="logo-leaf">🍃</span>EcoMorocco
+        </div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../pages/destinations.html">Destinations</a></li>
+            <li><a href="../pages/blogs.html">Blog</a></li>
+            <li><a href="../pages/about.html">About Us</a></li>
+            <li><a href="../pages/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="content">
+            <h1>Morocco's Cultural Tapestry</h1>
+            <p>A journey through the traditions, customs, and flavors of Morocco's diverse regions</p>
+        </div>
+    </section>
+
+    <section class="quick-nav">
+        <div class="container">
+            <ul class="region-nav">
+                <li><a href="#atlas">Atlas Mountains</a></li>
+                <li><a href="#coastal">Coastal Regions</a></li>
+                <li><a href="#desert">Desert Culture</a></li>
+                <li><a href="#etiquette">Cultural Etiquette</a></li>
+                <li><a href="#experiences">Food Experiences</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="culture-section">
+        <div class="container">
+            <h2 id="atlas" class="section-title">Atlas Mountains Heritage</h2>
+            <div class="culture-content">
+                <img src="../static/images/hero4.jpg" alt="Atlas Mountains Culture" class="culture-img">
+                <div class="culture-info">
+                    <h3>Berber Culture & Traditions</h3>
+                    <p>The Atlas Mountains are home to the Amazigh (Berber) people, whose culture dates back thousands of years. Living in harmony with the mountains, they have developed unique traditions and customs that continue to thrive today.</p>
+                    
+                    <div class="culture-details">
+                        <h4>Traditional Life</h4>
+                        <ul>
+                            <li>Village Organization: Communities centered around fortified villages (ksour)</li>
+                            <li>Traditional Crafts: Carpet weaving, silverwork, and pottery</li>
+                            <li>Music: Ahwash performances combining poetry, dance, and drums</li>
+                            <li>Agriculture: Terraced farming and traditional irrigation systems</li>
+                        </ul>
+                    </div>
+
+                    <div class="food-spotlight">
+                        <h4>Atlas Mountain Cuisine</h4>
+                        <ul>
+                            <li>Tagine with lamb and dried fruits</li>
+                            <li>Barley couscous with local vegetables</li>
+                            <li>Mountain honey and thyme tea</li>
+                            <li>Fresh goat cheese (jben)</li>
+                            <li>Traditional bread (khobz) baked in clay ovens</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2 id="coastal" class="section-title">Coastal Culture</h2>
+            <div class="culture-content">
+                <img src="../static/images/img4.jpg" alt="Coastal Culture" class="culture-img">
+                <div class="culture-info">
+                    <h3>Maritime Traditions</h3>
+                    <p>Morocco's Atlantic and Mediterranean coasts have developed distinct cultural traditions influenced by centuries of maritime trade and fishing heritage.</p>
+                    
+                    <div class="culture-details">
+                        <h4>Coastal Life</h4>
+                        <ul>
+                            <li>Fishing Communities: Traditional fishing methods and boat building</li>
+                            <li>Markets: Daily fish markets (souks) and auctions</li>
+                            <li>Crafts: Net making and boat maintenance</li>
+                            <li>Festivals: Annual maritime celebrations</li>
+                        </ul>
+                    </div>
+
+                    <div class="food-spotlight">
+                        <h4>Coastal Cuisine</h4>
+                        <ul>
+                            <li>Grilled sardines with chermoula sauce</li>
+                            <li>Fish tagine with preserved lemons</li>
+                            <li>Seafood bastilla</li>
+                            <li>Fresh oysters from Dakhla</li>
+                            <li>Traditional fish soup (harira del mar)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2 id="desert" class="section-title">Desert Culture</h2>
+            <div class="culture-content">
+                <img src="../static/images/deseret.jpg" alt="Desert Culture" class="culture-img">
+                <div class="culture-info">
+                    <h3>Saharan Heritage</h3>
+                    <p>The Sahara Desert's nomadic traditions and unique way of life have created a fascinating culture adapted to desert living.</p>
+                    
+                    <div class="culture-details">
+                        <h4>Desert Life</h4>
+                        <ul>
+                            <li>Nomadic Traditions: Seasonal migration patterns</li>
+                            <li>Desert Navigation: Traditional star navigation methods</li>
+                            <li>Music: Desert blues and traditional Gnawa music</li>
+                            <li>Handicrafts: Leather work and jewelry making</li>
+                        </ul>
+                    </div>
+
+                    <div class="food-spotlight">
+                        <h4>Desert Cuisine</h4>
+                        <ul>
+                            <li>Medfouna (Berber pizza)</li>
+                            <li>Camel meat tagine</li>
+                            <li>Date dishes and preserves</li>
+                            <li>Traditional mint tea ceremony</li>
+                            <li>Bread baked in sand ovens</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="etiquette" class="cultural-etiquette">
+        <div class="container">
+            <h2 class="section-title">Cultural Etiquette Guide</h2>
+            <div class="etiquette-grid">
+                <div class="etiquette-item">
+                    <div class="etiquette-icon">🤝</div>
+                    <h3>Greetings</h3>
+                    <p>Learn about traditional Moroccan greetings, including the importance of "As-salaam-alaikum" and handshake etiquette.</p>
+                </div>
+                <div class="etiquette-item">
+                    <div class="etiquette-icon">👔</div>
+                    <h3>Dress Code</h3>
+                    <p>Respect local customs by dressing modestly, especially when visiting rural areas and religious sites.</p>
+                </div>
+                <div class="etiquette-item">
+                    <div class="etiquette-icon">🍽️</div>
+                    <h3>Dining Customs</h3>
+                    <p>Understanding traditional eating etiquette, including using the right hand and sharing from communal dishes.</p>
+                </div>
+                <div class="etiquette-item">
+                    <div class="etiquette-icon">🕌</div>
+                    <h3>Religious Respect</h3>
+                    <p>Guidelines for visiting mosques and religious sites, and respecting prayer times.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experiences" class="food-experiences">
+        <div class="container">
+            <h2 class="section-title">Culinary Experiences</h2>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <img src="../static/images/cooking.jpg" alt="Cooking Class" class="experience-img">
+                    <div class="experience-content">
+                        <h3>Traditional Cooking Classes</h3>
+                        <p>Learn to prepare authentic Moroccan dishes with local families and expert chefs.</p>
+                        <a href="#" class="btn">Book a Class</a>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <img src="../static/images/market.jpg" alt="Market Tour" class="experience-img">
+                    <div class="experience-content">
+                        <h3>Market Tours</h3>
+                        <p>Explore traditional souks and learn about local ingredients and spices.</p>
+                        <a href="#" class="btn">Join a Tour</a>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <img src="../static/images/dinner.jpg" alt="Family Dinner" class="experience-img">
+                    <div class="experience-content">
+                        <h3>Family Dinner Experience</h3>
+                        <p>Share a traditional meal with a local family and experience genuine Moroccan hospitality.</p>
+                        <a href="#" class="btn">Reserve Experience</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About EcoMorocco</h3>
+                    <p>We're dedicated to sharing authentic Moroccan culture while promoting sustainable and responsible tourism.</p>
+                    <div class="social-links">
+                        <a href="#">FB</a>
+                        <a href="#">IG</a>
+                        <a href="#">TW</a>
+                        <a href="#">YT</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>Email: info@ecomorocco.com</li>
+                        <li>Phone: +212 555-123-456</li>
+                        <li>Address: 123 Eco Street, Rabat, Morocco</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 EcoMorocco. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts.js"></script>
+</body>
+</html> 

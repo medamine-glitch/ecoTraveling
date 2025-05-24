@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meknes - Imperial City of Morocco | EcoMorocco</title>
+    <meta name="description" content="Discover Meknes, Morocco's historic imperial city with its grand monuments, ancient medina, and sustainable tourism initiatives. Experience authentic Moroccan culture and heritage.">
+    <meta name="keywords" content="Meknes, Morocco, eco-tourism, sustainable travel, imperial city, Bab Mansour, Moulay Ismail, medina, Moroccan culture">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../static/styles/style.css">
+    <style>
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease;
+        }
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+        }
+        .hero {
+            position: relative;
+            height: 100vh;
+            background-image: url('https://images.unsplash.com/photo-1548018560-c7196548e84d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        .map-container {
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+        #map {
+            height: 400px;
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .gallery-img:hover {
+            transform: scale(1.05);
+        }
+        .activity-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .activity-card:hover {
+            transform: translateY(-5px);
+        }
+        .activity-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .eco-badge {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        .fact-box {
+            background: var(--secondary-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .fact-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .fact-list {
+            list-style: none;
+            padding: 0;
+        }
+        .fact-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #ccc;
+            display: flex;
+            align-items: center;
+        }
+        .fact-list li:last-child {
+            border-bottom: none;
+        }
+        .fact-icon {
+            margin-right: 0.8rem;
+            color: var(--primary-color);
+        }
+        .timeline-item {
+            display: flex;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .timeline-marker {
+            width: 80px;
+            height: 80px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            z-index: 2;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .timeline-content {
+            flex: 1;
+            background: white;
+            padding: 1.5rem;
+            margin-left: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .timeline-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <span class="logo-leaf">🍃</span>EcoMorocco
+                </div>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../pages/destinations.html">Destinations</a></li>
+                    <li><a href="../pages/blogs.html">Blog</a></li>
+                    <li><a href="../pages/about.html">About Us</a></li>
+                    <li><a href="../pages/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Meknes: Morocco's Imperial Treasure</h1>
+            <p>Discover the historic grandeur and authentic culture of Morocco's lesser-known imperial city</p>
+            <a href="#attractions" class="btn">Explore Attractions</a>
+        </div>
+    </section>
+
+    <div class="quick-nav">
+        <div class="container">
+            <ul class="region-nav">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#attractions">Attractions</a></li>
+                <li><a href="#heritage">Cultural Heritage</a></li>
+                <li><a href="#sustainable">Sustainable Tourism</a></li>
+                <li><a href="#itinerary">2-Day Itinerary</a></li>
+                <li><a href="#map">Map & Tips</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Overview Section -->
+    <section id="overview" class="culture-section">
+        <div class="container">
+            <h2 class="section-title">Meknes Overview</h2>
+            <div class="culture-content">
+                <img src="https://images.unsplash.com/photo-1548018560-c7196548e84d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bab Mansour gate in Meknes, Morocco" class="culture-img">
+                <div class="culture-info">
+                    <div>
+                        <h3>The Imperial City</h3>
+                        <p>Founded in the 11th century by the Almoravids as a military settlement, Meknes rose to prominence in the 17th century when Sultan Moulay Ismail chose it as his capital. Under his 55-year reign, the city was transformed into a spectacular Spanish-Moorish style imperial city with monumental gates, massive walls, and expansive palaces that earned it the nickname "Versailles of Morocco."</p>
+                        <p>Today, Meknes is one of Morocco's four imperial cities (along with Marrakech, Fez, and Rabat) and a UNESCO World Heritage site. While less frequented by tourists than its imperial counterparts, Meknes offers visitors an authentic experience of Moroccan history and culture without the crowds, making it an ideal destination for sustainable tourism.</p>
+                    </div>
+                    
+                    <div class="fact-box">
+                        <h3>Quick Facts</h3>
+                        <ul class="fact-list">
+                            <li><i class="fas fa-map-marker-alt fact-icon"></i> <strong>Location:</strong> Northern Morocco, near Fez and the Middle Atlas Mountains</li>
+                            <li><i class="fas fa-users fact-icon"></i> <strong>Population:</strong> Approximately 600,000 inhabitants</li>
+                            <li><i class="fas fa-temperature-high fact-icon"></i> <strong>Climate:</strong> Mediterranean with continental influences</li>
+                            <li><i class="fas fa-language fact-icon"></i> <strong>Languages:</strong> Arabic, Berber, French widely spoken</li>
+                            <li><i class="fas fa-landmark fact-icon"></i> <strong>Known for:</strong> Bab Mansour gate, imperial architecture, olive groves</li>
+                            <li><i class="fas fa-clock fact-icon"></i> <strong>Best Time to Visit:</strong> March-May and September-November</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3>A City of Contrasts</h3>
+                        <p>Meknes is characterized by its dual nature: the historic medina with its labyrinthine streets and ancient monuments, and the modern Ville Nouvelle established during the French protectorate. The city is surrounded by fertile agricultural land, particularly known for its olive groves and vineyards, which contribute to its reputation for excellent cuisine.</p>
+                        <p>Unlike some of Morocco's more tourist-oriented cities, Meknes maintains a relaxed, authentic atmosphere where visitors can experience everyday Moroccan life. The city's strategic location also makes it an excellent base for exploring nearby attractions such as the Roman ruins of Volubilis and the holy town of Moulay Idriss.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attractions Section -->
+    <section id="attractions" class="featured-section">
+        <div class="container">
+            <h2 class="section-title">Must-See Attractions</h2>
+            <p class="section-intro">Meknes offers a wealth of historical and cultural attractions that showcase the city's imperial past and vibrant present.</p>
+            
+            <div class="card-container">
+                <div class="card" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1548018560-c7196548e84d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bab Mansour gate in Meknes" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Bab Mansour</h3>
+                        <p class="card-text">Considered one of the most beautiful gates in Morocco and among the largest in North Africa, Bab Mansour was completed in 1732 and named after its architect, El-Mansour. The monumental gate is adorned with intricate zellij (mosaic tilework), marble columns repurposed from the Roman ruins of Volubilis, and elaborate calligraphy.</p>
+                        <p class="card-text">The gate served as the main entrance to the imperial city and Sultan Moulay Ismail's palace compound. Today, it stands as a testament to the architectural grandeur of Meknes during its golden age. While visitors cannot pass through the gate itself, they can enter through a smaller side entrance that now houses an art gallery.</p>
+                    </div>
+                </div>
+
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1539020140153-e479b8c5a1c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Mausoleum of Moulay Ismail in Meknes" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Mausoleum of Moulay Ismail</h3>
+                        <p class="card-text">This sacred site houses the tomb of Sultan Moulay Ismail, the founder of imperial Meknes. Unlike many religious sites in Morocco, the mausoleum is open to non-Muslim visitors, offering a rare opportunity to experience the stunning Moroccan religious architecture with its fountained courtyard, tranquil gardens, and intricately decorated tomb chamber.</p>
+                        <p class="card-text">Visitors are expected to dress modestly and remove their shoes before entering the tomb chamber. The atmosphere is one of peaceful reverence, with the beautiful craftsmanship of the carved plaster, cedar ceilings, and zellij tilework creating a space of remarkable beauty.</p>
+                    </div>
+                </div>
+
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1560553265-2b8a3282e8f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Heri es-Souani granaries and stables in Meknes" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Heri es-Souani</h3>
+                        <p class="card-text">These massive granaries and stables were built by Sultan Moulay Ismail to store food for his 12,000 horses and the city's population in case of siege. The ingenious design included a sophisticated ventilation system and an underground water channel that helped regulate temperature and humidity, preserving grain for years.</p>
+                        <p class="card-text">Though partially destroyed by an 18th-century earthquake, the remaining structures are still impressive, with massive stone arches and thick walls demonstrating the advanced engineering capabilities of the era. Adjacent to the granaries is the Agdal Basin, a huge water reservoir that was part of the city's water management system.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-container" style="margin-top: 2rem;">
+                <div class="card" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1531761535209-180857b2a366?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Medina of Meknes with traditional architecture" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">The Medina</h3>
+                        <p class="card-text">The ancient walled city of Meknes offers a more relaxed and authentic experience than the medinas of Marrakech or Fez. Its narrow streets are filled with traditional craftspeople, local markets, and architectural treasures including fondouks (traditional inns), hammams (public baths), and historic mosques.</p>
+                        <p class="card-text">The main commercial thoroughfare, Souq Nejjarine, is lined with shops selling everything from traditional crafts to everyday items. Unlike more tourist-oriented medinas, Meknes' old city caters primarily to locals, providing visitors with a glimpse into authentic daily life in Morocco.</p>
+                    </div>
+                </div>
+
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Place el-Hedim main square in Meknes" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Place el-Hedim</h3>
+                        <p class="card-text">This large square serves as the heart of Meknes, connecting the old medina with the imperial city. Built by Sultan Moulay Ismail as a place for royal announcements and public gatherings, it now functions as a vibrant social hub where locals and visitors alike gather, especially in the evenings.</p>
+                        <p class="card-text">The square is surrounded by cafés and restaurants, and hosts a daily market selling fresh produce, spices, and crafts. In the evenings, the space comes alive with food vendors, storytellers, and musicians, offering a smaller and more relaxed version of Marrakech's famous Jemaa el-Fnaa.</p>
+                    </div>
+                </div>
+
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1570688210489-d0f9ff4c1fac?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Dar Jamai Museum in Meknes" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Dar Jamai Museum</h3>
+                        <p class="card-text">Housed in a beautifully preserved 19th-century palace, this museum showcases traditional Moroccan arts and crafts. The building itself is a masterpiece of Moroccan architecture, with its central courtyard garden, ornate reception rooms, and intricate decorative details.</p>
+                        <p class="card-text">The museum's collections include traditional ceramics, jewelry, textiles, and woodwork from the region, as well as reconstructed rooms showing how wealthy Moroccan families lived in the late 19th century. The ornate reception hall with its painted cedar ceiling and the Andalusian-style garden provide a glimpse into Morocco's artistic heritage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultural Heritage Section -->
+    <section id="heritage" class="culture-section">
+        <div class="container">
+            <h2 class="section-title">Cultural Heritage</h2>
+            
+            <div class="culture-content">
+                <div class="culture-info">
+                    <h3>Traditional Crafts</h3>
+                    <div class="culture-details">
+                        <h4>Artisanal Excellence</h4>
+                        <p>Meknes has a rich tradition of craftsmanship that continues to thrive today. The city is particularly known for:</p>
+                        <ul>
+                            <li><strong>Damascene Work</strong> - The intricate art of inlaying silver or gold wire into iron or steel, creating elaborate patterns on items like jewelry boxes, daggers, and decorative plates.</li>
+                            <li><strong>Woodworking</strong> - Skilled artisans create carved cedar furniture, doors, and architectural elements using techniques passed down through generations.</li>
+                            <li><strong>Embroidery</strong> - Meknes is famous for its distinctive embroidery style featuring geometric patterns in silk thread on linen or cotton.</li>
+                            <li><strong>Pottery</strong> - The region produces distinctive ceramics, often featuring blue and green geometric designs.</li>
+                            <li><strong>Leatherwork</strong> - Traditional tanning and leatherworking techniques are used to create everything from decorative poufs to bags and belts.</li>
+                        </ul>
+                        <p>Visitors can observe these crafts being practiced in workshops throughout the medina, particularly in the artisan quarter near Bab Berdieyinne. Many workshops offer demonstrations and the opportunity to purchase directly from the artisans.</p>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1512236077335-f1cda9239c11?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Moroccan artisan creating traditional damascene work in Meknes" class="culture-img">
+            </div>
+            
+            <div class="culture-content">
+                <img src="https://images.unsplash.com/photo-1541518763669-27fef9b49644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Traditional Moroccan cuisine from Meknes region" class="culture-img">
+                <div class="culture-info">
+                    <h3>Culinary Traditions</h3>
+                    <div class="food-spotlight">
+                        <h4>Meknes Gastronomy</h4>
+                        <p>The cuisine of Meknes reflects its agricultural surroundings and imperial history, with dishes that showcase local ingredients and sophisticated preparation techniques:</p>
+                        <ul>
+                            <li><strong>Olive Oil</strong> - The region is famous for its olive groves, producing some of Morocco's finest olive oils that feature prominently in local cuisine.</li>
+                            <li><strong>Versailles Olives</strong> - Named after the city's nickname, these large green olives are cured with herbs and are a specialty of the region.</li>
+                            <li><strong>Nzaha</strong> - A local tradition of picnicking in the olive groves surrounding the city, typically featuring grilled meats, fresh bread, and seasonal vegetables.</li>
+                            <li><strong>Kamama</strong> - A distinctive Meknes dish of lamb or beef head slow-cooked with spices, typically served for special occasions.</li>
+                            <li><strong>Wine</strong> - The Meknes region is the center of Morocco's wine industry, with vineyards dating back to the French protectorate period producing award-winning wines.</li>
+                        </ul>
+                        <p>The city's weekly markets offer a bounty of fresh produce from the surrounding farmland, while traditional restaurants serve authentic Moroccan dishes in settings ranging from simple family-run establishments to elegant riads.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="culture-content">
+                <div class="culture-info">
+                    <h3>Festivals & Celebrations</h3>
+                    <div class="culture-details">
+                        <h4>Cultural Calendar</h4>
+                        <p>Throughout the year, Meknes hosts several festivals and cultural events that celebrate its heritage:</p>
+                        <ul>
+                            <li><strong>International Animation Film Festival</strong> - Held annually in March, this festival showcases animated films from around the world and has helped establish Meknes as a cultural center.</li>
+                            <li><strong>Cherry Festival</strong> - Taking place in June in the nearby town of Sefrou, this UNESCO-recognized festival celebrates the cherry harvest with parades, music, and the crowning of a Cherry Queen.</li>
+                            <li><strong>Volubilis Festival</strong> - Held at the nearby Roman ruins, this summer festival features music performances against the backdrop of the ancient site illuminated at night.</li>
+                            <li><strong>Moulay Idriss Moussem</strong> - An annual pilgrimage to the nearby holy town of Moulay Idriss Zerhoun, featuring processions, music, and communal meals.</li>
+                            <li><strong>Olive Festival</strong> - Celebrating the olive harvest in December, this festival includes olive oil tastings, traditional music, and demonstrations of traditional harvesting methods.</li>
+                        </ul>
+                        <p>These events offer visitors the opportunity to experience local traditions and interact with community members in a festive atmosphere that showcases the region's cultural richness.</p>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Traditional music performance at a festival in Meknes" class="culture-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainable Tourism Section -->
+    <section id="sustainable" class="eco-tips">
+        <div class="container">
+            <h2 class="section-title">Sustainable Tourism Initiatives</h2>
+            <p class="section-intro">Meknes is developing various initiatives to promote sustainable tourism that preserves its cultural heritage while benefiting local communities.</p>
+            
+            <div class="card-container">
+                <div class="tip-item">
+                    <div class="tip-icon"><i class="fas fa-home"></i></div>
+                    <div class="tip-content">
+                        <h3>Heritage Preservation</h3>
+                        <p>The Meknes Heritage Foundation works to restore and maintain the city's historic buildings using traditional materials and techniques. Several restoration projects have transformed abandoned historic buildings into cultural centers, museums, and sustainable accommodations, preserving architectural heritage while creating economic opportunities. Visitors can support these efforts by staying in restored riads and participating in guided heritage tours that contribute to conservation funds.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-item">
+                    <div class="tip-icon"><i class="fas fa-hands-helping"></i></div>
+                    <div class="tip-content">
+                        <h3>Community-Based Tourism</h3>
+                        <p>Local cooperatives offer authentic experiences that directly benefit community members, including cooking classes using locally sourced ingredients, craft workshops with master artisans, and homestay opportunities in both urban and rural settings. The Women's Artisan Cooperative of Meknes provides training and market access for female artisans, allowing them to preserve traditional crafts while earning sustainable incomes. Visitors can purchase directly from these cooperatives, ensuring fair compensation for artisans.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-item">
+                    <div class="tip-icon"><i class="fas fa-seedling"></i></div>
+                    <div class="tip-content">
+                        <h3>Agricultural Tourism</h3>
+                        <p>The fertile region surrounding Meknes is developing agritourism initiatives that connect visitors with local food systems. Olive farm tours offer insights into traditional and modern olive oil production methods, while vineyard visits showcase Morocco's growing wine industry. Several organic farms welcome visitors for tours, tastings, and farm-to-table meals, promoting sustainable agricultural practices. These initiatives help preserve traditional farming knowledge while creating additional income streams for agricultural communities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2-Day Itinerary Section -->
+    <section id="itinerary" class="featured-section">
+        <div class="container">
+            <h2 class="section-title">2-Day Sustainable Meknes Itinerary</h2>
+            <p class="section-intro">Experience the best of Meknes with this eco-friendly itinerary that balances must-see attractions with sustainable practices.</p>
+            
+            <div class="itinerary-timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-marker">Day 1</div>
+                    <div class="timeline-content">
+                        <h3>Historic Meknes</h3>
+                        <p><strong>Morning:</strong> Begin with a walking tour of the imperial city led by a guide from a local heritage association. Visit the monumental Bab Mansour gate, Place el-Hedim, and the Mausoleum of Moulay Ismail. The tour fees help support heritage conservation efforts.</p>
+                        <p><strong>Afternoon:</strong> Have lunch at a traditional restaurant serving locally sourced Moroccan cuisine. Afterward, explore the Dar Jamai Museum to learn about the region's artistic heritage, then wander through the medina's artisan quarter to observe craftspeople at work and perhaps purchase directly from workshops.</p>
+                        <p><strong>Evening:</strong> Return to Place el-Hedim to experience the evening atmosphere with local families. Enjoy dinner at a restaurant that participates in the Slow Food Morocco network, featuring seasonal ingredients from the region.</p>
+                        <p><strong>Accommodation:</strong> Stay in a restored riad in the medina that implements water conservation and energy efficiency measures while preserving traditional architecture.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-marker">Day 2</div>
+                    <div class="timeline-content">
+                        <h3>Beyond the City</h3>
+                        <p><strong>Morning:</strong> Take a half-day trip to the nearby UNESCO World Heritage site of Volubilis, the best-preserved Roman ruins in Morocco. Hire a local guide who can explain the site's historical and archaeological significance. The site implements various sustainability measures, including water conservation and the use of solar power.</p>
+                        <p><strong>Afternoon:</strong> Continue to the holy town of Moulay Idriss Zerhoun for lunch at a community-run restaurant that trains local youth in culinary skills. Take a guided walking tour of this picturesque hillside town, considered one of Morocco's most sacred sites.</p>
+                        <p><strong>Evening:</strong> Return to Meknes and visit an olive oil cooperative for a tasting session of locally produced oils. For your final evening, enjoy a home-cooked meal with a local family through a community tourism initiative, providing an authentic cultural exchange and direct economic benefit to residents.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 2rem;">This itinerary can be extended with visits to local vineyards, additional archaeological sites, or the nearby Middle Atlas Mountains for nature experiences.</p>
+        </div>
+    </section>
+
+    <!-- Map & Tips Section -->
+    <section id="map" class="culture-section">
+        <div class="container">
+            <h2 class="section-title">Map & Practical Information</h2>
+            
+            <div class="culture-content">
+                <div class="map-container">
+                    <h3>Meknes on the Map</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106276.59688429924!2d-5.618386606152344!3d33.89352!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda044e2951b2cf3%3A0x5e836f1d3db90f3!2sMek

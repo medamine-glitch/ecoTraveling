@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/styles/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the rich cultural heritage of Morocco through sustainable tourism. Learn about Moroccan traditions, customs, and how to experience them respectfully.">
+    <meta name="keywords" content="Moroccan culture, sustainable tourism Morocco, Moroccan traditions, Berber culture, Morocco customs, cultural tourism Morocco">
+    <title>Experience Moroccan Culture Sustainably | EcoMorocco</title>
+    <style>
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease;
+        }
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+        }
+        .hero {
+            padding-top: 80px;
+            min-height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                        url('https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .culture-content img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px 15px 0 0;
+            transition: transform 0.3s ease;
+        }
+        .card:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-leaf">🍃</span>EcoMorocco
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pages/destinations.html">Destinations</a></li>
+         
+            <li><a href="pages/blogs.html">Blog</a></li>
+            <li><a href="places/sahara.html">About Us</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="content">
+            <h1>Experience Moroccan Culture</h1>
+            <p>Discover Morocco's rich cultural heritage while respecting local traditions and supporting sustainable community tourism.</p>
+        <button onclick="window.location.href='desti.html'" class="btn">Explore More</button>
+        </div>
+    </section>
+
+    <section class="culture-section">
+        <div class="container">
+            <h2 class="section-title">Understanding Moroccan Culture</h2>
+            
+            <div class="culture-content">
+                <img src="static/images/mosq.jpg" 
+                     alt="Moroccan Traditional Village" class="culture-img">
+                
+                <div class="culture-info">
+                    <div>
+                        <h3>A Blend of Diverse Influences</h3>
+                        <p>Morocco's cultural identity has been shaped by numerous civilizations throughout history, including Berber, Arab, African, and European influences. This rich tapestry is evident in everything from architecture and art to cuisine and daily customs.</p>
+                    </div>
+                    
+                    <div class="culture-details">
+                        <h4>Key Cultural Elements</h4>
+                        <ul>
+                            <li><strong>Religion:</strong> Islam is central to daily life and social customs in Morocco. The call to prayer can be heard five times daily, and mosques are focal points in every city and village.</li>
+                            <li><strong>Languages:</strong> Arabic is the official language, but Berber (Amazigh) languages are widely spoken in rural areas. French is common in business and tourism, while Spanish is spoken in northern regions.</li>
+                            <li><strong>Family Structure:</strong> Family forms the cornerstone of Moroccan society, with extended family ties being particularly strong. Multiple generations often live together or close by.</li>
+                            <li><strong>Artistic Heritage:</strong> From intricate zellige tilework to geometric designs in architecture, Morocco's artistic traditions have been preserved through generations of skilled artisans.</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="culture-content">
+                <div class="culture-info">
+                    <div>
+                        <h3>Berber Heritage: The Indigenous Culture</h3>
+                        <p>The Berber (Amazigh) people are the indigenous inhabitants of Morocco, with a history stretching back thousands of years. Today, Berber culture remains vibrant, particularly in rural areas and mountain communities.</p>
+                    </div>
+                    
+                    <div class="culture-details">
+                        <h4>Experience Berber Culture</h4>
+                        <ul>
+                            <li><strong>Village Homestays:</strong> Experience daily life with a Berber family in the Atlas Mountains or Rif region. Participate in daily activities like baking bread, farming, or weaving.</li>
+                            <li><strong>Traditional Crafts:</strong> Learn about carpet weaving, pottery, and basket making from skilled artisans who use techniques passed down through generations.</li>
+                            <li><strong>Music and Dance:</strong> Attend authentic Ahwash or Ahidous performances featuring group dancing, singing, and traditional instruments like the bendir drum.</li>
+                            <li><strong>Language:</strong> Learn a few basic phrases in Tamazight (Berber language) to connect more deeply with local communities.</li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                
+                <img src="static/images/berber.jpg" 
+                     alt="Berber Community" class="culture-img">
+            </div>
+        </div>
+    </section>
+
+    <section class="cultural-etiquette">
+        <div class="container">
+            <h2 class="section-title">Cultural Etiquette for Sustainable Travel</h2>
+            <p class="text-center">Understanding and respecting local customs is essential for meaningful cultural exchange that benefits both visitors and communities.</p>
+            
+            <div class="etiquette-grid">
+                <div class="etiquette-item">
+                    <div class="etiquette-icon">👗</div>
+                    <h3>Dress Respectfully</h3>
+                    <p>Dress modestly, especially in rural areas and religious sites. For women, cover shoulders and knees. For men, avoid shorts in non-tourist areas. This shows respect for local values and helps you blend in more comfortably.</p>
+                </div>
+                
+                <div class="etiquette-item">
+                    <div class="etiquette-icon">📸</div>
+                    <h3>Photography Consent</h3>
+                    <p>Always ask permission before photographing people. Many Moroccans enjoy being photographed, but some may decline for religious or personal reasons. Respect their choice and never photograph people praying.</p>
+                </div>
+                
+                <div class="etiquette-item">
+                    <div class="etiquette-icon">🕌</div>
+                    <h3>Religious Respect</h3>
+                    <p>Non-Muslims cannot enter most mosques in Morocco (Hassan II Mosque in Casablanca is a notable exception). During Ramadan, avoid eating, drinking, or smoking in public during daylight hours.</p>
+                </div>
+                
+                <div class="etiquette-item">
+                    <div class="etiquette-icon">👋</div>
+                    <h3>Greetings Matter</h3>
+                    <p>Greetings are important in Moroccan culture. Learn a few Arabic phrases like "As-salamu alaykum" (peace be upon you) and "Shukran" (thank you). Take time for the ritual of greeting before beginning any conversation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-section">
+        <div class="container">
+            <h2 class="section-title">Traditional Moroccan Attire</h2>
+            <p class="text-center">Moroccan clothing reflects the country's history, climate, and diverse cultural influences. Here's what to look for during your travels:</p>
+            
+            <div class="card-container">
+                <div class="card">
+                    <a href="pages/clothes.html#mens-clothing"><img src="static/images/djelaba.jpg" 
+                         alt="Djellaba" class="card-img"></a>
+                    <div class="card-content">
+                        <h3 class="card-title">Djellaba</h3>
+                        <p class="card-text">This long, loose-fitting robe with full sleeves and a hood (called a "qob") is worn by both men and women. Women's djellabas often feature colorful embroidery, while men's are typically more subdued in color.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    
+                    <a href="pages/clothes.html#womens-clothing"><img src="static/images/caftan.jpg" 
+                         alt="Caftan" class="card-img"></a>
+                    <div class="card-content">
+                        <h3 class="card-title">Caftan</h3>
+                        <p class="card-text">Traditionally worn by women for special occasions, the caftan is a one-piece dress often made from luxurious fabrics like silk, satin, or brocade and embellished with intricate embroidery and beadwork.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
+                         alt="Berber Attire" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Berber Attire</h3>
+                        <p class="card-text">Berber clothing varies by region but often features vibrant colors and geometric patterns. Look for handwoven textiles, silver jewelry, and head wraps that protect from sun and sand in desert regions.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="eco-note" style="margin-top: 3rem; padding: 1.5rem; background-color: #f5f5f5; border-radius: 10px; text-align: center;">
+                <h3 style="color: var(--primary-color);">Sustainable Souvenir Tip</h3>
+                <p>When purchasing traditional clothing, seek out authentic artisan cooperatives where you can watch items being made. This ensures fair compensation for craftspeople and helps preserve traditional skills. Ask about the symbolism in patterns and designs for a deeper appreciation of the cultural significance.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="eco-tips">
+        <div class="container">
+            <h2 class="section-title">Cultural Immersion: Eco-Friendly Experiences</h2>
+            
+            <div class="tip-item">
+                <div class="tip-icon">🏡</div>
+                <div class="tip-content">
+                    <h3>Community-Based Tourism</h3>
+                    <p>Stay with local families in traditional riads, guesthouses, or rural homestays. Revenue goes directly to families and communities, creating sustainable income while providing you with authentic cultural insights.</p>
+                </div>
+            </div>
+            
+            <div class="tip-item">
+                <div class="tip-icon">🏺</div>
+                <div class="tip-content">
+                    <h3>Artisan Workshops</h3>
+                    <p>Participate in hands-on workshops with local artisans. Learn traditional crafts like pottery in Safi, leather working in Fez, or carpet weaving in the Middle Atlas mountains. These experiences preserve cultural heritage while supporting sustainable livelihoods.</p>
+                </div>
+            </div>
+            
+            <div class="tip-item">
+                <div class="tip-icon">🎵</div>
+                <div class="tip-content">
+                    <h3>Authentic Music Experiences</h3>
+                    <p>Seek out traditional music performances in cultural centers rather than staged tourist shows. The Gnawa music of Essaouira, the Andalusian orchestras of Fez, and Berber folk music in the Atlas Mountains all offer genuine cultural connection.</p>
+                </div>
+            </div>
+            
+            <div class="tip-item">
+                <div class="tip-icon">🧘‍♀️</div>
+                <div class="tip-content">
+                    <h3>Hammam Experience</h3>
+                    <p>Visit a neighborhood hammam (public bath) rather than an upscale spa for an authentic communal bathing ritual. Bring your own natural soap products to minimize waste, and respect the local etiquette of this important cultural institution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="newsletter" class="newsletter">
+        <div class="container">
+            <h2>Join Our Eco-Travel Community</h2>
+            <p>Get sustainable travel tips, exclusive eco-destination guides, and updates on our latest blog posts about Moroccan culture.</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Your Email Address">
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About EcoMorocco</h3>
+                    <p>We're dedicated to promoting responsible travel that preserves Morocco's natural beauty and cultural heritage while supporting local communities.</p>
+                    <div class="social-links">
+                        <a href="#">FB</a>
+                        <a href="#">IG</a>
+                        <a href="#">TW</a>
+                        <a href="#">YT</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pages/destinations.html">Destinations</a></li>
+                        <li><a href="pages/culture-and-food.html">Culture & Food</a></li>
+                        <li><a href="#tips">Eco Tips</a></li>
+                        <li><a href="pages/blogs.html">Blog</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Eco Partners</h3>
+                    <ul>
+                        <li><a href="#">Morocco Ecotourism Association</a></li>
+                        <li><a href="#">Green Key Morocco</a></li>
+                        <li><a href="#">Atlas Mountain Conservation</a></li>
+                        <li><a href="#">Marine Protection Alliance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>Email: info@ecomorocco.com</li>
+                        <li>Phone: +212 555-123-456</li>
+                        <li>Address: 123 Eco Street, Rabat, Morocco</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 EcoMorocco. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="static/js/scripts.js"></script>
+</body>
+</html>

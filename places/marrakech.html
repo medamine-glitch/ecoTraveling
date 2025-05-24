@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marrakech - The Red City | Sustainable Travel in Morocco</title>
+    <meta name="description" content="Discover Marrakech's vibrant medina, historic palaces, and sustainable tourism initiatives. Experience the magic of Morocco's Red City with eco-friendly travel options.">
+    <meta name="keywords" content="Marrakech, Morocco, eco-tourism, sustainable travel, medina, Jemaa el-Fnaa, Majorelle Garden, riads, Moroccan culture">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../static/styles/style.css">
+    <style>
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease;
+        }
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+        }
+        .hero {
+            position: relative;
+            height: 100vh;
+            background-image: url('images/atlas img/kech.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        .map-container {
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+        #map {
+            height: 400px;
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .gallery-img:hover {
+            transform: scale(1.05);
+        }
+        .activity-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .activity-card:hover {
+            transform: translateY(-5px);
+        }
+        .activity-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .eco-badge {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        .fact-box {
+            background: var(--secondary-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .fact-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .fact-list {
+            list-style: none;
+            padding: 0;
+        }
+        .fact-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #ccc;
+            display: flex;
+            align-items: center;
+        }
+        .fact-list li:last-child {
+            border-bottom: none;
+        }
+        .fact-icon {
+            margin-right: 0.8rem;
+            color: var(--primary-color);
+        }
+        .timeline-item {
+            display: flex;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .timeline-marker {
+            width: 80px;
+            height: 80px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            z-index: 2;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .timeline-content {
+            flex: 1;
+            background: white;
+            padding: 1.5rem;
+            margin-left: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .timeline-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <span class="logo-leaf">🍃</span>EcoMorocco
+                </div>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../pages/destinations.html">Destinations</a></li>
+                    <li><a href="../pages/blogs.html">Blog</a></li>
+                    <li><a href="../pages/about.html">About Us</a></li>
+                    <li><a href="../pages/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Marrakech: The Magical Red City</h1>
+            <p>Discover the vibrant culture, historic architecture, and sustainable initiatives of Morocco's most iconic city</p>
+            <a href="#attractions" class="btn">Explore Attractions</a>
+        </div>
+    </section>
+
+    <div class="quick-nav">
+        <div class="container">
+            <ul class="region-nav">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#attractions">Attractions</a></li>
+                <li><a href="#sustainable">Sustainable Tourism</a></li>
+                <li><a href="#culture">Culture & Food</a></li>
+                <li><a href="#itinerary">3-Day Itinerary</a></li>
+                <li><a href="#map">Map & Tips</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Overview Section -->
+    <section id="overview" class="culture-section">
+        <div class="container">
+            <h2 class="section-title">Marrakech Overview</h2>
+            <div class="culture-content">
+                <img src="images/atlas img/kech.jpg" alt="Aerial view of Marrakech with the Atlas Mountains in the background" class="culture-img">
+                <div class="culture-info">
+                    <div>
+                        <h3>The Red City of Morocco</h3>
+                        <p>Founded in 1062 by the Almoravids, Marrakech is one of Morocco's four imperial cities and has been a cultural, religious, and trading center for centuries. Known as "The Red City" due to the distinctive salmon-pink color of its buildings and walls, Marrakech captivates visitors with its vibrant energy, rich history, and stunning architecture.</p>
+                        <p>Located at the foothills of the Atlas Mountains, Marrakech serves as a gateway between the mountains and desert, creating a unique blend of cultures and influences. The city is divided into two distinct parts: the historic medina (a UNESCO World Heritage site) with its labyrinthine streets and traditional markets, and the modern Gueliz district with its contemporary restaurants, shops, and art galleries.</p>
+                    </div>
+                    
+                    <div class="fact-box">
+                        <h3>Quick Facts</h3>
+                        <ul class="fact-list">
+                            <li><i class="fas fa-map-marker-alt fact-icon"></i> <strong>Location:</strong> Central-southern Morocco, at the foothills of the Atlas Mountains</li>
+                            <li><i class="fas fa-users fact-icon"></i> <strong>Population:</strong> Approximately 1 million inhabitants</li>
+                            <li><i class="fas fa-temperature-high fact-icon"></i> <strong>Climate:</strong> Semi-arid with hot summers and mild winters</li>
+                            <li><i class="fas fa-language fact-icon"></i> <strong>Languages:</strong> Arabic, Berber, French widely spoken</li>
+                            <li><i class="fas fa-landmark fact-icon"></i> <strong>Known for:</strong> Historic medina, souks, Jemaa el-Fnaa square, riads</li>
+                            <li><i class="fas fa-clock fact-icon"></i> <strong>Best Time to Visit:</strong> March-May and September-November</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3>A City of Contrasts</h3>
+                        <p>Marrakech is a city of fascinating contrasts where ancient traditions coexist with modern innovations. Within the medina walls, life continues much as it has for centuries, with artisans practicing traditional crafts in small workshops and vendors selling their wares in bustling souks. Meanwhile, in Gueliz and Hivernage districts, contemporary restaurants, galleries, and boutiques showcase Morocco's modern side.</p>
+                        <p>In recent years, Marrakech has emerged as a leader in sustainable tourism in Morocco, with numerous eco-friendly riads, organic restaurants, and initiatives aimed at preserving cultural heritage while reducing environmental impact. The city hosted the UN Climate Change Conference (COP22) in 2016, highlighting its commitment to sustainability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attractions Section -->
+    <section id="attractions" class="featured-section">
+        <div class="container">
+            <h2 class="section-title">Must-See Attractions</h2>
+            <p class="section-intro">Marrakech offers a wealth of cultural and historical attractions that showcase the city's rich heritage and vibrant atmosphere.</p>
+            
+            <div class="card-container">
+                <div class="card" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1548018560-c7196548e84d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Jemaa el-Fnaa square at sunset" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Jemaa el-Fnaa Square</h3>
+                        <p class="card-text">The heart of Marrakech and one of the most famous public squares in Africa, Jemaa el-Fnaa transforms throughout the day. In the morning, it hosts orange juice stalls and snake charmers. By afternoon, performers, storytellers, and musicians appear. As evening falls, the square becomes a massive open-air dining area with food stalls serving traditional Moroccan dishes.</p>
+                        <p class="card-text">UNESCO recognized the cultural significance of this space by declaring it a "Masterpiece of the Oral and Intangible Heritage of Humanity." For the best views, visit one of the surrounding rooftop cafés at sunset to watch the square come alive with lights and activity.</p>
+                    </div>
+                </div>
+
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1539020140153-e479b8c5a1c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Bahia Palace interior courtyard" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Bahia Palace</h3>
+                        <p class="card-text">Built in the late 19th century, Bahia Palace exemplifies Moroccan architectural excellence with its intricate tilework, carved cedar ceilings, and tranquil courtyards. The palace was intended to be the greatest of its time, with 150 rooms arranged around a series of courtyards and gardens.</p>
+                        <p class="card-text">The name "Bahia" means "brilliance," and the palace lives up to its name with stunning examples of traditional Moroccan craftsmanship. Visitors can explore the harem quarters, reception halls, and gardens that once housed the grand vizier's concubines and served as a venue for diplomatic receptions.</p>
+                    </div>
+                </div>
+
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1560553265-2b8a3282e8f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Majorelle Garden with vibrant blue buildings" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Jardin Majorelle</h3>
+                        <p class="card-text">Created by French painter Jacques Majorelle over forty years and later restored by fashion designer Yves Saint Laurent, this botanical garden is a peaceful oasis in the bustling city. The garden is famous for its vibrant cobalt blue buildings (known as "Majorelle Blue"), exotic plant collection, and the Berber Museum housed within.</p>
+                        <p class="card-text">The garden features plants from five continents, with a particular focus on cacti and other desert plants that thrive in Marrakech's climate. After Yves Saint Laurent's death in 2008, his ashes were scattered in the garden, and a memorial was erected in his honor. The garden also houses the Yves Saint Laurent Museum, showcasing the designer's work and connection to Morocco.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-container" style="margin-top: 2rem;">
+                <div class="card" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1531761535209-180857b2a366?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Koutoubia Mosque at sunset" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Koutoubia Mosque</h3>
+                        <p class="card-text">The largest mosque in Marrakech and a symbol of the city, the Koutoubia Mosque dates back to the 12th century. Its 77-meter minaret is a masterpiece of Moorish architecture that influenced the design of the Giralda in Seville and the Hassan Tower in Rabat. While non-Muslims cannot enter the mosque itself, the exterior and surrounding gardens are worth visiting.</p>
+                        <p class="card-text">The name "Koutoubia" comes from the Arabic word for booksellers, as the area once housed many manuscript dealers and bookshops. The mosque is particularly beautiful at sunset when the red stone glows in the evening light and the call to prayer echoes across the city.</p>
+                    </div>
+                </div>
+
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Colorful spices in the souks of Marrakech" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">The Souks</h3>
+                        <p class="card-text">Marrakech's famous markets are a labyrinth of narrow alleyways filled with thousands of shops selling everything from traditional crafts to spices and textiles. Each section of the souk specializes in different goods: the spice souk with its pyramids of colorful spices, the carpet souk with its stunning handwoven rugs, the metalwork souk with its intricate lanterns and teapots.</p>
+                        <p class="card-text">Exploring the souks is a sensory adventure, with the scents of spices, the sounds of hammering metalworkers, and the sight of artisans practicing centuries-old crafts. Bargaining is expected and part of the experience, but remember to negotiate respectfully and with a smile.</p>
+                    </div>
+                </div>
+
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1570688210489-d0f9ff4c1fac?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Traditional Moroccan riad courtyard with fountain" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Historic Riads</h3>
+                        <p class="card-text">Traditional Moroccan houses built around a central courtyard, riads are an architectural treasure of Marrakech. Many historic riads have been converted into boutique hotels and restaurants, allowing visitors to experience these beautiful buildings from the inside. The typical riad features a garden or fountain in the central courtyard, with rooms arranged around this peaceful core.</p>
+                        <p class="card-text">The design of riads reflects Islamic values of privacy and inward focus - plain exterior walls hide the beauty within. Inside, you'll find intricate tilework (zellij), carved plaster, painted cedar ceilings, and often a small pool or fountain that helps cool the air. Staying in a riad offers an authentic experience of traditional Moroccan architecture and hospitality.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainable Tourism Section -->
+    <section id="sustainable" class="eco-tips">
+        <div class="container">
+            <h2 class="section-title">Sustainable Tourism Initiatives</h2>
+            <p class="section-intro">Marrakech is leading the way in sustainable tourism in Morocco, with numerous initiatives aimed at preserving cultural heritage while reducing environmental impact.</p>
+            
+            <div class="card-container">
+                <div class="tip-item">
+                    <div class="tip-icon"><i class="fas fa-home"></i></div>
+                    <div class="tip-content">
+                        <h3>Eco-Friendly Accommodations</h3>
+                        <p>Many riads and hotels in Marrakech have embraced sustainable practices, from solar water heating to organic gardens and water conservation systems. Properties like Riad Dar Zaman, Riad Mena, and El Fenn have implemented comprehensive sustainability programs while preserving traditional architecture and supporting local artisans. These eco-riads often feature locally sourced materials, energy-efficient design, and waste reduction initiatives.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-item">
+                    <div class="tip-icon"><i class="fas fa-utensils"></i></div>
+                    <div class="tip-content">
+                        <h3>Farm-to-Table Dining</h3>
+                        <p>Marrakech's culinary scene has seen a growing focus on organic, locally sourced ingredients. Restaurants like The Amal Center (which also trains disadvantaged women in culinary skills), Le Jardin, and La Famille serve delicious meals using produce from nearby farms and gardens. Many establishments now maintain their own organic gardens, reducing food miles and supporting sustainable agriculture in the region.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-item">
+                    <div class="tip-icon"><i class="fas fa-hands-helping"></i></div>
+                    <div class="tip-content">
+                        <h3>Artisan Preservation</h3>
+                        <p>Organizations like the Marrakech Artisanat Initiative work to preserve traditional crafts by connecting artisans with sustainable markets and providing training in business skills. The Ensemble Artisanal, a government-supported artisan center, offers fair-trade shopping where visitors can purchase directly from craftspeople at fixed prices. These initiatives help maintain cultural heritage while ensuring artisans receive fair compensation for their work.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-container" style="margin-top: 2rem;">
+                <div class="tip-item">
+                    <div class="tip-icon"><i class="fas fa-bicycle"></i></div>
+                    <div class="tip-content">
+                        <h3>Green Transportation</h3>
+                        <p>Marrakech has invested in sustainable transportation options, including a bike-sharing program and the development of electric bus lines. The city's compact medina is naturally pedestrian-friendly, with many areas closed to vehicle traffic. Eco-tourism companies offer guided walking and cycling tours that minimize environmental impact while providing deeper cultural insights than conventional tours.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-item">
+                    <div class="tip-icon"><i class="fas fa-leaf"></i></div>
+                    <div class="tip-content">
+                        <h3>Urban Green Spaces</h3>
+                        <p>Beyond the famous Majorelle Garden, Marrakech has developed several public green spaces that serve as "green lungs" for the city. The Menara Gardens, Cyber Park, and the new Olive Grove Park provide cooling effects in the hot climate while offering recreational spaces for residents and visitors. These parks often incorporate traditional water conservation techniques like the khettara irrigation system.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-item">
+                    <div class="tip-icon"><i class="fas fa-solar-panel"></i></div>
+                    <div class="tip-content">
+                        <h3>Renewable Energy</h3>
+                        <p>Following Morocco's national commitment to renewable energy, Marrakech has seen increasing adoption of solar power. Many hotels and riads now use solar water heating and photovoltaic systems. The nearby Noor Ouarzazate Solar Complex, one of the world's largest concentrated solar power plants, symbolizes Morocco's leadership in renewable energy in Africa and supplies some of Marrakech's electricity needs.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture & Food Section -->
+    <section id="culture" class="culture-section">
+        <div class="container">
+            <h2 class="section-title">Culture & Cuisine</h2>
+            
+            <div class="culture-content">
+                <div class="culture-info">
+                    <h3>Cultural Experiences</h3>
+                    <div class="culture-details">
+                        <h4>Traditional Arts & Crafts</h4>
+                        <p>Marrakech has been a center for craftsmanship for centuries, with skills passed down through generations. Visitors can observe artisans at work in the souks or participate in workshops to learn traditional crafts:</p>
+                        <ul>
+                            <li>Carpet weaving - Berber rugs with distinctive geometric patterns</li>
+                            <li>Leather working - especially at the famous tanneries</li>
+                            <li>Pottery and ceramics - featuring intricate designs and vibrant colors</li>
+                            <li>Metalwork - creating ornate lanterns, teapots, and decorative items</li>
+                            <li>Woodcarving - particularly cedar wood for furniture and architectural elements</li>
+                        </ul>
+                        <p>Many workshops offer hands-on experiences where visitors can try these crafts themselves, creating a deeper connection to Moroccan cultural heritage.</p>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1512236077335-f1cda9239c11?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Moroccan artisan creating traditional pottery" class="culture-img">
+            </div>
+            
+            <div class="culture-content">
+                <img src="https://images.unsplash.com/photo-1541518763669-27fef9b49644?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Traditional Moroccan tagine dish" class="culture-img">
+                <div class="culture-info">
+                    <h3>Culinary Traditions</h3>
+                    <div class="food-spotlight">
+                        <h4>Marrakech's Distinctive Cuisine</h4>
+                        <p>Marrakech's cuisine reflects its history as a crossroads of cultures, blending Berber, Arab, and French influences with local ingredients and cooking techniques:</p>
+                        <ul>
+                            <li><strong>Tagine</strong> - The iconic slow-cooked stew named after the conical earthenware pot it's prepared in. Popular varieties include lamb with prunes, chicken with preserved lemon and olives, and vegetable tagines.</li>
+                            <li><strong>Couscous</strong> - Traditionally served on Fridays, this steamed semolina dish is topped with vegetables and meat in a flavorful broth.</li>
+                            <li><strong>Tangia</strong> - A Marrakech specialty where meat (usually lamb) is slow-cooked with spices in an urn-shaped clay pot, traditionally in the hot ashes of the hammam (public bath) furnaces.</li>
+                            <li><strong>Pastilla</strong> - A sweet-savory pie with layers of thin pastry filled with pigeon or chicken, almonds, eggs, and spices, dusted with cinnamon and sugar.</li>
+                            <li><strong>Street Food</strong> - Jemaa el-Fnaa comes alive at night with food stalls serving grilled meats, harira soup, snail broth, and fresh-squeezed orange juice.</li>
+                        </ul>
+                        <p>Culinary tours and cooking classes are popular activities in Marrakech, allowing visitors to learn about traditional ingredients and techniques while preparing authentic Moroccan dishes.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="culture-content">
+                <div class="culture-info">
+                    <h3>Music & Celebrations</h3>
+                    <div class="culture-details">
+                        <h4>Rhythms of Marrakech</h4>
+                        <p>Music is an integral part of life in Marrakech, from the Gnawa performers in Jemaa el-Fnaa to the sophisticated sounds of Andalusian orchestras:</p>
+                        <ul>
+                            <li><strong>Gnawa Music</strong> - A hypnotic, trance-like style with roots in sub-Saharan Africa, featuring the distinctive sound of the sintir (bass lute) and metal castanets.</li>
+                            <li><strong>Andalusian Music</strong> - Classical Moroccan music with origins in Islamic Spain, performed by orchestras with string instruments, percussion, and vocals.</li>
+                            <li><strong>Berber Folk Music</strong> - Traditional music of Morocco's indigenous people, often featuring communal singing and the bendir drum.</li>
+                        </ul>
+                        <p>Marrakech hosts several music festivals throughout the year, including the Popular Arts Festival in July and the Marrakech Folk Festival. Many riads and cultural centers also offer evening performances where visitors can experience these musical traditions.</p>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Gnawa musicians performing in Marrakech" class="culture-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- 3-Day Itinerary Section -->
+    <section id="itinerary" class="featured-section">
+        <div class="container">
+            <h2 class="section-title">3-Day Sustainable Marrakech Itinerary</h2>
+            <p class="section-intro">Experience the best of Marrakech with this eco-friendly itinerary that balances must-see attractions with sustainable practices.</p>
+            
+            <div class="itinerary-timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-marker">Day 1</div>
+                    <div class="timeline-content">
+                        <h3>Exploring the Historic Medina</h3>
+                        <p><strong>Morning:</strong> Begin with a walking tour of the medina led by a local guide from a sustainable tourism cooperative. Visit the Ben Youssef Madrasa, an ancient Islamic college with stunning architecture, and explore the nearby Marrakech Museum housed in the 19th-century Dar Menebhi Palace.</p>
+                        <p><strong>Afternoon:</strong> Have lunch at Terrasse des Épices, a rooftop restaurant serving seasonal Moroccan cuisine with panoramic views of the medina. Afterward, explore the souks with a focus on artisan workshops where you can see traditional crafts being made. Visit the Ensemble Artisanal for fixed-price, fair-trade shopping.</p>
+                        <p><strong>Evening:</strong> Experience the sunset transformation of Jemaa el-Fnaa square from a rooftop café like Café de France. For dinner, try Earth Café, Marrakech's first vegetarian restaurant serving organic, locally sourced dishes.</p>
+                        <p><strong>Accommodation:</strong> Stay in an eco-certified riad in the medina that implements water conservation, energy efficiency, and waste reduction practices.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-marker">Day 2</div>
+                    <div class="timeline-content">
+                        <h3>Gardens and Palaces</h3>
+                        <p><strong>Morning:</strong> Visit Jardin Majorelle early to avoid crowds. Explore its botanical collections and the Berber Museum, then continue to the nearby Yves Saint Laurent Museum. Both sites implement sustainable practices including water recycling and solar energy.</p>
+                        <p><strong>Afternoon:</strong> Enjoy lunch at La Famille, a garden restaurant serving vegetarian Mediterranean-Moroccan fusion dishes made with locally grown produce. Afterward, visit the 16th-century Saadian Tombs and the magnificent Bahia Palace to admire traditional Moroccan architecture and craftsmanship.</p>
+                        <p><strong>Evening:</strong> Take a sustainable cooking class at a local riad or cooking school where you'll learn to prepare traditional Moroccan dishes using locally sourced, seasonal ingredients. Many classes include a visit to local markets to select ingredients, providing insights into Moroccan food culture and sustainable shopping practices.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-marker">Day 3</div>
+                    <div class="timeline-content">
+                        <h3>Beyond the City Center</h3>
+                        <p><strong>Morning:</strong> Visit the Menara Gardens, a historic olive grove with a pavilion overlooking a large reflecting pool. Continue to the Agdal Gardens, another historic green space that demonstrates traditional irrigation techniques. Both gardens showcase sustainable water management practices that have been used in Morocco for centuries.</p>
+                        <p><strong>Afternoon:</strong> Have lunch at Amal Women's Training Center, a non-profit restaurant that empowers disadvantaged women through culinary training. Afterward, explore the Gueliz district to see Marrakech's modern side, including contemporary art galleries and the Museum of African Contemporary Art Al Maaden (MACAAL).</p>
+                        <p><strong>Evening:</strong> For your final evening, enjoy dinner at a restaurant that specializes in slow food principles and local ingredients, such as Le Jardin Secret or Nomad. End your stay with a traditional hammam experience at a spa that uses natural, locally produced products and implements water conservation practices.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 2rem;">This itinerary can be customized based on your interests and the season of your visit. Consider adding day trips to nearby sustainable destinations like the Atlas Mountains or Agafay Desert if you have more time.</p>
+        </div>
+    </section>
+
+    <!-- Map & Tips Section -->
+    <section id="map" class="culture-section">
+        <div class="container">
+            <h2 class="section-title">Map & Practical Information</h2>
+            
+            <div class="culture-content">
+                <div class="map-container">
+                    <h3>Marrakech on the Map</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108894.43805917752!2d-8.077804887500002!3d31.634599400000016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafee8d96179e51%3A0x5950b6534f87adb8!2sMarrakesh%2C%20Morocco!5e0!3m2!1sen!2sus!4v1589215411195!5m2!1sen!2sus" width="100%" height="400" frameborder="0" style="border:0; border-radius: 10px;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+                
+                <div class="culture-info">
+                    <div>
+                        <h3>Sustainable Travel Tips</h3>
+                        <ul style="list-style: none; padding-left: 1.5rem;">
+                            <li><i class="fas fa-tint" style="color: var(--primary-color); margin-right: 0.5rem;"></i> <strong>Conserve Water:</strong> Morocco is a water-stressed country. Take short showers, reuse towels, and be mindful of your water consumption.</li>
+                            <li><i class="fas fa-shopping-bag" style="color: var(--primary-color); margin-right: 0.5rem;"></i> <strong>Shop Responsibly:</strong> Buy directly from artisans when possible and support fair trade initiatives. Avoid products made from endangered species or antiquities.</li>
+                            <li><i class="fas fa-trash-alt" style="color: var(--primary-color); margin-right: 0.5rem;"></i> <strong>Reduce Waste:</strong> Bring a reusable water bottle with a filter, cloth shopping bag, and avoid single-use plastics. Morocco is working to reduce plastic waste.</li>
+                            <li><i class="fas fa-camera" style="color: var(--primary-color); margin-right: 0.5rem;"></i> <strong>Respectful Photography:</strong> Always ask permission before photographing people, especially in rural areas. Be willing to pay a small tip if requested.</li>
+                            <li><i class="fas fa-hands-helping" style="color: var(--primary-color); margin-right: 0.5rem;"></i> <strong>Support Local:</strong> Choose locally owned accommodations, restaurants, and tour operators that employ local staff and implement sustainable practices.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fact-box">
+                        <h3>When to Visit</h3>
+                        <ul class="fact-list">
+                            <li><i class="fas fa-sun fact-icon"></i> <strong>Spring (March-May):</strong> Ideal temperatures, blooming gardens</li>
+                            <li><i class="fas fa-temperature-high fact-icon"></i> <strong>Summer (June-August):</strong> Very hot (35-45°C), fewer tourists</li>
+                            <li><i class="fas fa-leaf fact-icon"></i> <strong>Fall (September-November):</strong> Pleasant weather, harvest season</li>
+                            <li><i class="fas fa-snowflake fact-icon"></i> <strong>Winter (December-February):</strong> Mild days, cool nights, occasional rain</li>
+                            <li><i class="fas fa-calendar-alt fact-icon"></i> <strong>Ramadan:</strong> Dates vary yearly; many restaurants close during daylight hours</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Destinations Section -->
+    <section class="culture-section">
+        <div class="container">
+            <h2 class="section-title">Other Eco-Friendly Destinations in Morocco</h2>
+            
+            <div class="card-container">
+                <div class="card">
+                    <img src="images/atlas img/atlas.jpg" alt="Atlas Mountains landscape" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Atlas Mountains</h3>
+                        <p class="card-text">Discover traditional Berber villages, stunning mountain landscapes, and sustainable trekking opportunities just a short drive from Marrakech.</p>
+                        <a href="atlas.html" class="card-link">Explore Atlas Mountains <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="../static/images/chefchaouen/chef1.jpg" alt="Blue streets of Chefchaouen" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Chefchaouen</h3>
+                        <p class="card-text">Visit Morocco's famous blue city with its sustainable initiatives, mountain setting, and rich cultural heritage.</p>
+                        <a href="chefchaouen.html" class="card-link">Explore Chefchaouen <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="images/sahara/sahara.jpg" alt="Sahara Desert dunes" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Sahara Desert</h3>
+                        <p class="card-text">Experience the magic of Morocco's desert with eco-friendly camps and sustainable tourism practices.</p>
+                        <a href="sahara.html" class="card-link">Explore Sahara <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Subscribe for Eco-Travel Updates</h2>
+            <p>Stay informed about sustainable travel opportunities and conservation efforts in Morocco</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" class="newsletter-input" required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>We're dedicated to promoting sustainable and responsible travel throughout Morocco's most beautiful destinations.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Destinations</h3>
+                    <ul>
+                        <li><a href="marrakech.html">Marrakech</a></li>
+                        <li><a href="chefchaouen.html">Chefchaouen</a></li>
+                        <li><a href="atlas.html">Atlas Mountains</a></li>
+                        <li><a href="sahara.html">Sahara Desert</a></li>
+                        <li><a href="akchour.html">Akchour</a></li>
+                        <li><a href="meknes.html">Meknes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li><a href="../pages/ecotourism.html">What is Ecotourism?</a></li>
+                        <li><a href="../pages/responsible-travel.html">Responsible Travel Guide</a></li>
+                        <li><a href="../pages/carbon-offset.html">Carbon Offset Programs</a></li>
+                        <li><a href="../pages/blogs.html">Travel Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Marrakech, Morocco</li>
+                        <li><i class="fas fa-phone"></i> +212 612 345 678</li>
+                        <li><i class="fas fa-envelope"></i> info@ecomorocco.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 EcoMorocco. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple scroll behavior for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

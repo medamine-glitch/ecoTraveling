@@ -1,0 +1,169 @@
+.blog-post {
+    padding: 120px 0 60px;
+}
+
+.blog-post article {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.blog-post h1 {
+    font-size: 2.5rem;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+}
+
+.post-meta {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+}
+
+.post-meta span {
+    margin-right: 1rem;
+}
+
+.featured-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.intro {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 3rem;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1rem;
+}
+
+.riad-entry {
+    margin-bottom: 4rem;
+}
+
+.riad-entry h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.riad-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.riad-entry p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.riad-entry ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.riad-entry ul li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.riad-entry ul li:before {
+    content: '🌿';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+.booking-tips {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 3rem 0;
+}
+
+.booking-tips h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.booking-tips ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.booking-tips ul li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.booking-tips ul li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+.share-section {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+.share-section h3 {
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .blog-post {
+        padding: 100px 1rem 40px;
+    }
+
+    .blog-post h1 {
+        font-size: 2rem;
+    }
+
+    .featured-image {
+        height: 300px;
+    }
+
+    .riad-image {
+        height: 250px;
+    }
+
+    .intro {
+        font-size: 1.1rem;
+    }
+} 

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chefchaouen - Eco-Friendly Mountain Town | Green Travel Morocco</title>
+    <meta name="description" content="Discover Chefchaouen's blue-washed streets, eco-lodges, local crafts, and sustainable tourism. Experience authentic Moroccan food and culture in this mountain paradise.">
+    <meta name="keywords" content="Chefchaouen, Blue City, Morocco, eco-tourism, sustainable travel, mountain town, eco-lodges, Moroccan culture">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../static/styles/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" rel="stylesheet">
+    <style>    
+    
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease;
+        }
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        #map {
+            height: 400px;
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+        
+        .map-container {
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-img:hover {
+            transform: scale(1.05);
+        }
+        
+        .activity-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .activity-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .eco-badge {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .food-card {
+            display: flex;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .food-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .food-info {
+            padding: 1.5rem;
+            flex: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .food-card {
+                flex-direction: column;
+            }
+            
+            .food-img {
+                width: 100%;
+                height: 200px;
+            }
+        }
+        
+        .fact-box {
+            background: var(--secondary-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .fact-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .fact-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .fact-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed #ccc;
+            display: flex;
+            align-items: center;
+        }
+        
+        .fact-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .fact-icon {
+            margin-right: 0.8rem;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+             <nav class="navbar">
+        <div class="logo">
+            <span class="logo-leaf">🍃</span>EcoMorocco
+        </div>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../pages/destinations.html">Destinations</a></li>
+            <li><a href="../pages/blogs.html">Blog</a></li>
+            <li><a href="../pages/about.html">About Us</a></li>
+            <li><a href="../pages/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+        </div>
+    </header>
+
+    <div class="destination-hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../static/images/chefchaouen/chefchaouen.png');">
+        <div class="content">
+            <h1>Chefchaouen: The Blue Pearl of Morocco</h1>
+            <p>Discover sustainable travel in Morocco's enchanting blue mountain town</p>
+        </div>
+    </div>
+
+    <div class="quick-nav">
+        <div class="container">
+            <ul class="region-nav">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#eco-lodges">Eco-Lodges</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#food">Local Food</a></li>
+                <li><a href="#culture">Culture</a></li>
+                <li><a href="#map">Map & Location</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <section id="overview" class="culture-section">
+        <div class="container">
+            <h2 class="section-title">Chefchaouen Overview</h2>
+            <div class="culture-content">
+                <img src="../static/images/chefchaouen/chef1.jpg" alt="Blue streets of Chefchaouen with potted plants" class="culture-img">
+                <div class="culture-info">
+                    <div>
+                        <h3>The Blue Mountain Town</h3>
+                        <p>Nestled in the Rif Mountains of northwest Morocco, Chefchaouen (often called simply "Chaouen") is famous for its striking blue-washed buildings that create a dreamlike atmosphere throughout its winding medina streets. Founded in 1471, this small mountain town sits at an elevation of approximately 564 meters (1,850 feet) and offers visitors a perfect blend of natural beauty, cultural richness, and eco-friendly tourism.</p>
+                        <p>The distinctive blue color that covers walls, doors, and stairways throughout the town dates back to the 15th century when Jewish refugees settled here, bringing their tradition of painting buildings blue – a color representing the sky and heaven. Today, this tradition continues as locals regularly repaint their homes, maintaining the town's unique character.</p>
+                    </div>
+                    
+                    <div class="fact-box">
+                        <h3>Quick Facts</h3>
+                        <ul class="fact-list">
+                            <li><i class="fas fa-mountain fact-icon"></i> <strong>Location:</strong> Rif Mountains, Northern Morocco</li>
+                            <li><i class="fas fa-arrows-alt-v fact-icon"></i> <strong>Elevation:</strong> 564 meters (1,850 feet)</li>
+                            <li><i class="fas fa-temperature-high fact-icon"></i> <strong>Climate:</strong> Mediterranean mountain climate</li>
+                            <li><i class="fas fa-language fact-icon"></i> <strong>Languages:</strong> Arabic, Berber, Spanish, French</li>
+                            <li><i class="fas fa-paint-brush fact-icon"></i> <strong>Known for:</strong> Blue-painted medina, handicrafts, mountain views</li>
+                            <li><i class="fas fa-leaf fact-icon"></i> <strong>Eco-status:</strong> Leading sustainable tourism in Morocco</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3>Why Visit?</h3>
+                        <p>Chefchaouen offers travelers a unique combination of cultural immersion, natural beauty, and sustainable tourism options. The town's commitment to preserving local traditions while embracing eco-friendly practices makes it an ideal destination for responsible travelers. From the photogenic blue streets to the surrounding mountain trails, Chefchaouen provides authentic experiences that connect visitors with Morocco's rich heritage and natural environment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="eco-lodges" class="eco-commitment">
+        <div class="container">
+            <h2 class="section-title">Eco-Friendly Accommodations</h2>
+            <p class="text-center">Chefchaouen has embraced sustainable tourism with a growing number of eco-lodges and environmentally conscious accommodations.</p>
+            
+            <div class="commitment-grid">
+                <div class="commitment-item">
+                    <div class="commitment-icon"><i class="fas fa-home"></i></div>
+                    <h3>Traditional Riads</h3>
+                    <p>Stay in carefully restored traditional homes with interior courtyards that use natural ventilation and local materials, reducing environmental impact while preserving architectural heritage.</p>
+                </div>
+                
+                <div class="commitment-item">
+                    <div class="commitment-icon"><i class="fas fa-mountain"></i></div>
+                    <h3>Mountain Ecolodges</h3>
+                    <p>These properties on the outskirts of town use renewable energy, rainwater harvesting, and organic gardens while offering spectacular views of the Rif Mountains.</p>
+                </div>
+                
+                <div class="commitment-item">
+                    <div class="commitment-icon"><i class="fas fa-campground"></i></div>
+                    <h3>Rural Guesthouses</h3>
+                    <p>Family-run accommodations in surrounding villages offer farm-to-table dining experiences, cultural exchanges, and authentic glimpses into rural Moroccan life.</p>
+                </div>
+                
+                <div class="commitment-item">
+                    <div class="commitment-icon"><i class="fas fa-solar-panel"></i></div>
+                    <h3>Sustainable Features</h3>
+                    <p>Many accommodations feature solar water heating, locally sourced furnishings, waste reduction programs, and partnerships with local environmental initiatives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="activities" class="culture-section">
+        <div class="container">
+            <h2 class="section-title">Sustainable Activities</h2>
+            
+            <div class="gallery">
+                <img src="../static/images/chefchaouen/rif1.jpg" alt="Hiking in the Rif Mountains near Chefchaouen" class="gallery-img">
+                <img src="../static/images/chefchaouen/chef2.jpg" alt="Traditional weaving workshop in Chefchaouen" class="gallery-img">
+                <img src="../static/images/chefchaouen/chef3.jpg" alt="Blue medina streets of Chefchaouen" class="gallery-img">
+                <img src="../static/images/chefchaouen/akchour.jpg" alt="Akchour waterfalls near Chefchaouen" class="gallery-img">
+            </div>
+            
+            <div class="culture-content" style="margin-top: 3rem;">
+                <div>
+                    <div class="activity-card">
+                        <div class="activity-icon"><i class="fas fa-hiking"></i></div>
+                        <span class="eco-badge">Low Impact</span>
+                        <h3>Mountain Hiking</h3>
+                        <p>Explore the stunning Rif Mountains with local guides who share their knowledge of indigenous plants, traditional land use, and conservation efforts. Popular trails include routes to the Spanish Mosque viewpoint and longer treks to nearby peaks with panoramic views.</p>
+                    </div>
+                    
+                    <div class="activity-card">
+                        <div class="activity-icon"><i class="fas fa-water"></i></div>
+                        <span class="eco-badge">Nature Preservation</span>
+                        <h3>Akchour Waterfalls</h3>
+                        <p>Visit the breathtaking Akchour waterfalls and the "Bridge of God" natural rock arch in Talassemtane National Park, about 30 minutes from town. Community-managed trails help minimize environmental impact while supporting local conservation efforts.</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="activity-card">
+                        <div class="activity-icon"><i class="fas fa-hands"></i></div>
+                        <span class="eco-badge">Cultural Heritage</span>
+                        <h3>Artisan Workshops</h3>
+                        <p>Participate in traditional craft workshops with local artisans who specialize in weaving with natural dyes, woodworking, and leather goods. Learn ancient techniques that have been passed down through generations while supporting preservation of cultural heritage.</p>
+                    </div>
+                    
+                    <div class="activity-card">
+                        <div class="activity-icon"><i class="fas fa-utensils"></i></div>
+                        <span class="eco-badge">Community Support</span>
+                        <h3>Culinary Experiences</h3>
+                        <p>Join cooking classes focusing on traditional Riffian cuisine using local seasonal ingredients. Visit women's cooperatives that produce goat cheese, honey, and aromatic herbs from the surrounding mountains, directly supporting local communities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="food" class="food-experiences">
+        <div class="container">
+            <h2 class="section-title">Local Cuisine</h2>
+            <p class="text-center">Chefchaouen's cuisine reflects its mountain location and cultural influences, with dishes that showcase local ingredients and traditions.</p>
+            
+            <div class="food-card">
+                <img src="../static/images/chefchaouen/tajine.jpg" alt="Traditional tagine with goat meat and vegetables" class="food-img">
+                <div class="food-info">
+                    <h3>Rif Tagine</h3>
+                    <p>A local variation of Morocco's famous slow-cooked stew, featuring goat meat (a sustainable choice in the mountain environment) with seasonal vegetables, olives, and herbs from the surrounding hills.</p>
+                </div>
+            </div>
+            
+            <div class="food-card">
+                <img src="../static/images/chefchaouen/bissar.png" alt="Bissara soup in a traditional bowl" class="food-img">
+                <div class="food-info">
+                    <h3>Bissara</h3>
+                    <p>A hearty soup made from dried fava beans or split peas, drizzled with local olive oil and flavored with cumin and paprika. This warming dish is perfect for Chefchaouen's cooler mountain evenings.</p>
+                </div>
+            </div>
+            
+            <div class="food-card">
+                <img src="../static/images/chefchaouen/jben.jpg" alt="Fresh goat cheese from the Rif Mountains" class="food-img">
+                <div class="food-info">
+                    <h3>Jben</h3>
+                    <p>Fresh goat cheese produced in nearby villages, often served with olive oil, zaatar herbs, and local honey. Supporting local cheese producers helps maintain traditional pastoral practices in the region.</p>
+                </div>
+            </div>
+            
+            <div class="food-card">
+                <img src="../static/images/chefchaouen/tea.jpg
+                " alt="Moroccan mint tea being poured" class="food-img">
+                <div class="food-info">
+                    <h3>Mountain Herb Tea</h3>
+                    <p>Beyond the classic Moroccan mint tea, Chefchaouen offers special herbal infusions made with wild-harvested herbs from the Rif Mountains, including thyme, sage, and wild mint.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="culture" class="cultural-etiquette">
+        <div class="container">
+            <h2 class="section-title">Culture & Traditions</h2>
+            
+            <div class="etiquette-grid">
+                <div class="etiquette-item">
+                    <div class="etiquette-icon"><i class="fas fa-tshirt"></i></div>
+                    <h3>Traditional Dress</h3>
+                    <p>Many locals wear traditional djellabas (long, loose-fitting wool garments with pointed hoods) that are distinctive to the region. Women often wear colorful striped fouta textiles and wide-brimmed straw hats decorated with colorful pom-poms.</p>
+                </div>
+                
+                <div class="etiquette-item">
+                    <div class="etiquette-icon"><i class="fas fa-language"></i></div>
+                    <h3>Language</h3>
+                    <p>Chefchaouen is unique in Morocco for its prevalence of Spanish as a second language (rather than French), due to its proximity to Spain and historical connections. The local dialect blends Arabic with Berber and Spanish influences.</p>
+                </div>
+                
+                <div class="etiquette-item">
+                    <div class="etiquette-icon"><i class="fas fa-hands-helping"></i></div>
+                    <h3>Etiquette Tips</h3>
+                    <p>Ask permission before photographing people, dress modestly (especially when visiting religious sites), and learn a few Arabic or Spanish greeting phrases. Remove shoes when entering homes and religious buildings.</p>
+                </div>
+                
+                <div class="etiquette-item">
+                    <div class="etiquette-icon"><i class="fas fa-drum"></i></div>
+                    <h3>Music & Celebrations</h3>
+                    <p>The region has a rich musical heritage that blends Andalusian, Berber, and Arabic traditions. If visiting in August, don't miss the annual Chaouen Music Festival that celebrates the area's diverse cultural influences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="map" class="culture-section">
+        <div class="container">
+            <h2 class="section-title">Location & Getting There</h2>
+            
+            <div class="culture-content">
+                <div class="map-container">
+                    <h3>Chefchaouen on the Map</h3>
+                    <div id="map"></div>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            var map = L.map('map').setView([35.1689, -5.2694], 13);
+                            
+                            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                            }).addTo(map);
+                            
+                            L.marker([35.1689, -5.2694]).addTo(map)
+                                .bindPopup("<b>Chefchaouen</b><br>The Blue Pearl of Morocco")
+                                .openPopup();
+                        });
+                    </script>
+                </div>
+                
+                <div class="culture-info">
+                    <div>
+                        <h3>How to Get There Sustainably</h3>
+                        <p>Chefchaouen is located about 112 km (70 miles) from Tangier and 200 km (124 miles) from Fez. To minimize your carbon footprint:</p>
+                        <ul style="list-style: none; padding-left: 1.5rem;">
+                            <li><i class="fas fa-bus" style="color: var(--primary-color); margin-right: 0.5rem;"></i> <strong>Public Transport:</strong> Regular CTM and Supratours buses connect Chefchaouen with major cities including Tangier, Tetouan, Fez, and Casablanca.</li>
+                            <li><i class="fas fa-users" style="color: var(--primary-color); margin-right: 0.5rem;"></i> <strong>Shared Grand Taxis:</strong> More flexible than buses, these can be a good option for shorter distances.</li>
+                            <li><i class="fas fa-walking" style="color: var(--primary-color); margin-right: 0.5rem;"></i> <strong>Getting Around:</strong> The town itself is compact and pedestrian-friendly. Most attractions are within walking distance in the car-free medina.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="fact-box">
+                        <h3>Best Time to Visit</h3>
+                        <ul class="fact-list">
+                            <li><i class="fas fa-sun fact-icon"></i> <strong>Spring (April-May):</strong> Mild temperatures, wildflowers in bloom</li>
+                            <li><i class="fas fa-cloud fact-icon"></i> <strong>Autumn (Sept-Oct):</strong> Pleasant weather, fewer tourists</li>
+                            <li><i class="fas fa-snowflake fact-icon"></i> <strong>Winter (Nov-Feb):</strong> Coolest months, occasional rain</li>
+                            <li><i class="fas fa-temperature-high fact-icon"></i> <strong>Summer (June-Aug):</strong> Warmest period, busiest season</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking-info">
+        <div class="container">
+            <h2>Ready to Experience Chefchaouen?</h2>
+            <p>Plan your sustainable trip to Morocco's blue mountain town and support local eco-initiatives</p>
+            <a href="contact.html" class="btn">Contact Us for Custom Itineraries</a>
+        </div>
+    </section>
+
+    <section class="eco-tips">
+        <div class="container">
+            <h2 class="section-title">Responsible Travel Tips for Chefchaouen</h2>
+            
+            <div class="card-container">
+                <div class="tip-item">
+                    <div class="tip-icon"><i class="fas fa-water"></i></div>
+                    <div class="tip-content">
+                        <h3>Conserve Water</h3>
+                        <p>Water is precious in this mountain region. Take short showers, reuse towels, and be mindful of your water consumption during your stay.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-item">
+                    <div class="tip-icon"><i class="fas fa-shopping-bag"></i></div>
+                    <div class="tip-content">
+                        <h3>Support Local Artisans</h3>
+                        <p>Purchase directly from workshops where you can see items being made. Look for the local wool garments and woven products that Chefchaouen is known for.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-item">
+                    <div class="tip-icon"><i class="fas fa-trash-alt"></i></div>
+                    <div class="tip-content">
+                        <h3>Minimize Waste</h3>
+                        <p>Bring a reusable water bottle and shopping bag. Avoid single-use plastics that can pollute the beautiful mountain environment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="culture-section">
+        <div class="container">
+            <h2 class="section-title">Other Eco-Friendly Destinations in Morocco</h2>
+            
+            <div class="card-container">
+                <div class="card">
+                    <img src="images/atlas img/i,lil.jpg" alt="High Atlas Mountains and Berber villages" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Imlil & High Atlas</h3>
+                        <p class="card-text">Experience traditional Berber culture and stunning mountain landscapes in this trekking paradise.</p>
+                        <a href="imlil.html" class="card-link">Explore Imlil <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="../static/images/desert/desert.jpg" alt="Sahara Desert camp at sunset" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Sahara Desert</h3>
+                        <p class="card-text">Stay in eco-camps and learn about nomadic culture in the magnificent dunes of Merzouga.</p>
+                        <a href="sahara.html" class="card-link">Explore Sahara <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <img src="images/atlas img/souira.jpg" alt="Essaouira harbor with blue boats" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Essaouira</h3>
+                        <p class="card-text">Discover this wind-powered coastal city with eco-markets and sustainable seafood.</p>
+                        <a href="essaouira.html" class="card-link">Explore Essaouira <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <h2>Subscribe for Eco-Travel Updates</h2>
+            <p>Stay informed about sustainable travel opportunities and tips for Morocco</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" class="newsletter-input" required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>We're dedicated to promoting sustainable and responsible travel throughout Morocco's most beautiful destinations.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Destinations</h3>
+                    <ul>
+                        <li><a href="chefchaouen.html">Chefchaouen</a></li>
+                        <li><a href="imlil.html">Imlil & High Atlas</a></li>
+                        <li><a href="sahara.html">Sahara Desert</a></li>
+                        <li><a href="essaouira.html">Essaouira</a></li>
+                        <li><a href="agadir.html">Souss-Massa Park</a></li>
+                        <li><a href="paradise-valley.html">Paradise Valley</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li><a href="ecotourism.html">What is Ecotourism?</a></li>
+                        <li><a href="responsible-travel.html">Responsible Travel Guide</a></li>
+                        <li><a href="carbon-offset.html">Carbon Offset Programs</a></li>
+                        <li><a href="blog.html">Travel Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Marrakech, Morocco</li>
+                        <li><i class="fas fa-phone"></i> +212 612 345 678</li>
+                        <li><i class="fas fa-envelope"></i> info@greentravelmorocco.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Green Travel Morocco. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple scroll behavior for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
